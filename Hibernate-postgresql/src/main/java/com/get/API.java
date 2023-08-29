@@ -1,0 +1,43 @@
+package com.get;
+
+public class API {
+	public static final String usertablelink="user_table_links";
+	public static final String tssc="tssc";
+	public static final String tabless= "tables";
+	public static final String users= "users";
+	public static final String shift= "shift";
+	public static final String sections= "sections";
+	public static final String tablesetups= "tablesetups";
+	public static final String menuhierarchies= "menuhierarchies";
+	public static final String item_prices= "item_prices";
+	public static final String usertablestatuses= "usertablestatuses";
+	public static final String recipes= "recipes";
+	public static final String menuitems= "menuitems";
+	public static final String backofficetables= "backofficetables";
+	public static final String user_table_links= "user_table_links";
+	public static final String customers= "customers";
+	public static final String vat_masters= "vat_masters";
+	public static final String costing_methods= "costing_methods";
+	public static final String number_series= "number_series";
+	public static final String product_group_masters= "product_group_masters";
+	public static final String division_masters= "division_masters";
+	public static final String portion_weights= "portion_weights";
+	public static final String portion_cost_hierarchies= "portion_cost_hierarchies";
+	public static final String product_hierarchy_links= "product_hierarchy_links";
+	public static final String gui_menuses= "gui_menuses";
+	public static final String table_configurators= "table_configurators";
+	public static final String item_ledgers= "item_ledgers";
+	public static final String tableformlinks= "tableformlinks";
+	public static final String discounttypes= "discounttypes";
+	public static final String coupon_headers= "coupon_headers";
+	public static final String coupon_entries= "coupon_entries";
+	public static final String reason_masters= "reason_masters";
+	public static final String unit_of_measures= "unit_of_measures";
+	public static final String erp_item_master= "erp_item_master";
+	public static final String addons= "addons";
+	public static final String item_modifier_detail= "item_modifier_detail";
+	public static final String item_modifier_header= "item_modifier_header";
+	public static final String settings= "settings";
+	public static final String kds_master= "kds_master";
+	public static final String kds_user_links= "kds_user_links";
+}
