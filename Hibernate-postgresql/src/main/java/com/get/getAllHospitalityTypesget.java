@@ -13,45 +13,47 @@ import org.hibernate.cfg.Configuration;
 
 import com.google.gson.Gson;
 
-import pojo.kds_masters;
+import pojo.getAllHospitalityTypess;
 
-public class kdsmasterss {
+public class getAllHospitalityTypesget {
 
 	public static void main(String[] args) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
-        String fullUrl = preurl + API.kds_master ;
+        String fullUrl = preurl + API.getAllHospitalityTypes ;
         String info = executeGet(fullUrl);
-//        System.out.println(info);
+        System.out.println(info);
         
         Gson gson = new Gson();
-        kds_masters[] kds_mastersArray = gson.fromJson(info, kds_masters[].class);
+        getAllHospitalityTypess[] getAllHospitalityTypessArray = gson.fromJson(info, getAllHospitalityTypess[].class);
         System.out.println("done1");
         
     	Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-		cfg.addAnnotatedClass(kds_masters.class);
+		cfg.addAnnotatedClass(getAllHospitalityTypess.class);
 		cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 		System.out.println("done2");
-
+		
 		SessionFactory sessionFactory=cfg.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		System.out.println("done3");
 		try {
 			Transaction transaction=session.beginTransaction();
 			System.out.println("done4");
-			for (kds_masters spojo :kds_mastersArray) {
+			for (getAllHospitalityTypess spojo :getAllHospitalityTypessArray) {
 	               
-				kds_masters entity = new kds_masters();
+				getAllHospitalityTypess entity = new getAllHospitalityTypess();
                 System.out.println("done5");
                 entity.setId(spojo.getId());
                 entity.setCreated_at(spojo.getCreated_at());
                 entity.setUpdated_at(spojo.getUpdated_at());
-                entity.setStore_id(spojo.getStore_id());
-                entity.setKds_id(spojo.getKds_id());
+                entity.setCode(spojo.getCode());
+                entity.setDescription(spojo.getDescription());
+                entity.setStore_code(spojo.getStore_code());
+                entity.setLayout_view(spojo.getLayout_view());
                 entity.setIs_active(spojo.getIs_active());
   
                 // Save the entity to the database
-                session.saveOrUpdate(entity);;
+                session.save(entity);
             }
 			 transaction.commit();
 	            System.out.println("Saved");

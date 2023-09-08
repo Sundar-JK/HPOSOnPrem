@@ -6,17 +6,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="sections")
-public class sectionss {
-	
+@Table(name="getAllHospitalitytypes_table")
+public class getAllHospitalityTypess {
+
 	@Override
 	public String toString() {
-		return "sectionss [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", code=" + code
-				+ ", description=" + description + ", hospitality_type=" + hospitality_type + ", store_code="
-				+ store_code + ", is_active=" + is_active + ", getId()=" + getId() + ", getCreated_at()="
+		return "getAllHospitalityTypess [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", code=" + code + ", description=" + description + ", store_code=" + store_code + ", layout_view="
+				+ layout_view + ", is_active=" + is_active + ", getId()=" + getId() + ", getCreated_at()="
 				+ getCreated_at() + ", getUpdated_at()=" + getUpdated_at() + ", getCode()=" + getCode()
-				+ ", getDescription()=" + getDescription() + ", getHospitality_type()=" + getHospitality_type()
-				+ ", getStore_code()=" + getStore_code() + ", getIs_active()=" + getIs_active() + ", getClass()="
+				+ ", getDescription()=" + getDescription() + ", getStore_code()=" + getStore_code()
+				+ ", getLayout_view()=" + getLayout_view() + ", getIs_active()=" + getIs_active() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	public int getId() {
@@ -49,17 +49,17 @@ public class sectionss {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getHospitality_type() {
-		return hospitality_type;
-	}
-	public void setHospitality_type(String hospitality_type) {
-		this.hospitality_type = hospitality_type;
-	}
 	public String getStore_code() {
 		return store_code;
 	}
 	public void setStore_code(String store_code) {
 		this.store_code = store_code;
+	}
+	public String getLayout_view() {
+		return layout_view;
+	}
+	public void setLayout_view(String layout_view) {
+		this.layout_view = layout_view;
 	}
 	public String getIs_active() {
 		return is_active;
@@ -68,37 +68,46 @@ public class sectionss {
 		this.is_active = is_active;
 	}
 	
-	public sectionss(int id, String created_at, String updated_at, String code, String description,
-			String hospitality_type, String store_code, String is_active) {
+	
+	public getAllHospitalityTypess(int id, String created_at, String updated_at, String code, String description,
+			String store_code, String layout_view, String is_active) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 		this.code = code;
 		this.description = description;
-		this.hospitality_type = hospitality_type;
 		this.store_code = store_code;
+		this.layout_view = layout_view;
 		this.is_active = is_active;
 	}
 	
 	@Id
-	@Column(name="id")
+	@Column(name="Id")
 	int id;
-	@Column(name="createdAt")
+	
+	@Column(name="CreatedAt")
 	String created_at;
-	@Column(name="updatedAt")
+	
+	@Column(name="UpdatedAt")
 	String updated_at;
-	@Column(name="code")
+	
+	@Column(name="Code")
 	String code;
-	@Column(name="description")
+	
+	@Column(name="Description")
 	String description;
-	@Column(name="hospitality_type")
-	String hospitality_type;
-	@Column(name="store_code")
+	
+	@Column(name="Storecode")
 	String store_code;
-	@Column(name="is_active")
+	
+	@Column(name="LayoutView")
+	String layout_view;
+	
+	@Column(name="IsActive")
 	String is_active;
-
-	public sectionss() {}
-
+	
+	public getAllHospitalityTypess() {}
+	
+	
 }

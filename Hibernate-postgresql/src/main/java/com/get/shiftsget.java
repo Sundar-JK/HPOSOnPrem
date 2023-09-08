@@ -13,47 +13,44 @@ import org.hibernate.cfg.Configuration;
 
 import com.google.gson.Gson;
 
-import pojo.usertablestatusess;
+import pojo.shifts;
 
-public class usertablesetups {
+public class shiftsget {
 
 	public static void main(String[] args) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
-        String fullUrl = preurl + API.kds_master ;
+        String fullUrl = preurl + API.shift ;
         String info = executeGet(fullUrl);
-        System.out.println(info);
+//        System.out.println(info);
         
         Gson gson = new Gson();
-        usertablestatusess[] usertablestatusessArray = gson.fromJson(info, usertablestatusess[].class);
+        shifts[] shiftsArray = gson.fromJson(info, shifts[].class);
         System.out.println("done1");
         
     	Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-		cfg.addAnnotatedClass(usertablestatusess.class);
+		cfg.addAnnotatedClass(shifts.class);
 		cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 		System.out.println("done2");
-		
+
 		SessionFactory sessionFactory=cfg.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		System.out.println("done3");
 		try {
 			Transaction transaction=session.beginTransaction();
 			System.out.println("done4");
-			for (usertablestatusess spojo :usertablestatusessArray) {
+			for (shifts spojo :shiftsArray) {
 	               
-				usertablestatusess entity = new usertablestatusess();
+				shifts entity = new shifts();
                 System.out.println("done5");
                 entity.setId(spojo.getId());
                 entity.setCreated_at(spojo.getCreated_at());
                 entity.setUpdated_at(spojo.getUpdated_at());
-                entity.setUserid(spojo.getUserid());
-                entity.setStatus(spojo.getUserid());
-                entity.setNextstatus(spojo.getNextstatus());
-                entity.setIsactive(spojo.getIsactive());
-                entity.setCreatedby(spojo.getCreatedby());
+                entity.setShift_id(spojo.getShift_id());
+                entity.setLabel_id(spojo.getLabel_id());
   
                 // Save the entity to the database
-                session.save(entity);
+                session.saveOrUpdate(entity);;
             }
 			 transaction.commit();
 	            System.out.println("Saved");

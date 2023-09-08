@@ -13,45 +13,72 @@ import org.hibernate.cfg.Configuration;
 
 import com.google.gson.Gson;
 
-import pojo.kds_masters;
+//import pojo.TempTableHeader;
+import pojo.TempTrnHeader;
 
-public class kdsmasterss {
+public class temptrnget {
 
+	
 	public static void main(String[] args) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
-        String fullUrl = preurl + API.kds_master ;
+        String fullUrl = preurl + API.temptableheader ;
         String info = executeGet(fullUrl);
-//        System.out.println(info);
+        System.out.println(info);
         
         Gson gson = new Gson();
-        kds_masters[] kds_mastersArray = gson.fromJson(info, kds_masters[].class);
+        TempTrnHeader[] TempTableHeaderArray = gson.fromJson(info, TempTrnHeader[].class);
         System.out.println("done1");
         
     	Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-		cfg.addAnnotatedClass(kds_masters.class);
+		cfg.addAnnotatedClass(TempTrnHeader.class);
 		cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 		System.out.println("done2");
-
+		
 		SessionFactory sessionFactory=cfg.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		System.out.println("done3");
 		try {
 			Transaction transaction=session.beginTransaction();
 			System.out.println("done4");
-			for (kds_masters spojo :kds_mastersArray) {
+			for (TempTrnHeader spojo :TempTableHeaderArray) {
 	               
-				kds_masters entity = new kds_masters();
+				TempTrnHeader entity = new TempTrnHeader();
                 System.out.println("done5");
                 entity.setId(spojo.getId());
                 entity.setCreated_at(spojo.getCreated_at());
                 entity.setUpdated_at(spojo.getUpdated_at());
-                entity.setStore_id(spojo.getStore_id());
-                entity.setKds_id(spojo.getKds_id());
-                entity.setIs_active(spojo.getIs_active());
+                entity.setTransaction_no(spojo.getTransaction_no());
+                entity.setStore_no(spojo.getStore_no());
+                entity.setPos_terminal_no(spojo.getPos_terminal_no());
+                entity.setStaff_id(spojo.getStaff_id());
+                entity.setTransaction_date(spojo.getTransaction_date());
+                entity.setOriginal_date(spojo.getOriginal_date());
+                entity.setTransaction_time(spojo.getTransaction_time());
+                entity.setCustomer_no(spojo.getCustomer_no());
+                entity.setNet_amount(spojo.getNet_amount());
+                entity.setGross_amount(spojo.getGross_amount());
+                entity.setPayment(spojo.getPayment());
+                entity.setDiscounts(spojo.getDiscounts());
+                entity.setTotal_quantity(spojo.getTotal_quantity());
+                entity.setEntry_status(spojo.getEntry_status());
+                entity.setNo_of_item_lines(spojo.getNo_of_item_lines());
+                entity.setNo_of_payment_lines(spojo.getNo_of_payment_lines());
+                entity.setTable_no(spojo.getTable_no());
+                entity.setTable_capacity(spojo.getTable_capacity());
+                entity.setNo_of_covers(spojo.getNo_of_covers());
+                entity.setActive_table_no(spojo.getActive_table_no());
+                entity.setTable_group(spojo.getTable_group());
+                entity.setKitchen_status(spojo.getKitchen_status());
+                entity.setOrder_no(spojo.getOrder_no());
+                entity.setOrder_current_status(spojo.getOrder_current_status());
+                entity.setOrder_delivery_id(spojo.getOrder_delivery_id());
+                entity.setVat_amount(spojo.getVat_amount());
+                entity.setZreport_id(spojo.getZreport_id());
+                entity.setVariant_code(spojo.getVariant_code());
   
                 // Save the entity to the database
-                session.saveOrUpdate(entity);;
+                session.save(entity);
             }
 			 transaction.commit();
 	            System.out.println("Saved");

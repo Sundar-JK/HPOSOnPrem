@@ -13,45 +13,47 @@ import org.hibernate.cfg.Configuration;
 
 import com.google.gson.Gson;
 
-import pojo.kds_masters;
+import pojo.usertablestatusess;
 
-public class kdsmasterss {
+public class usertablestatuses {
 
 	public static void main(String[] args) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
-        String fullUrl = preurl + API.kds_master ;
+        String fullUrl = preurl + API.usertablestatuses ;
         String info = executeGet(fullUrl);
-//        System.out.println(info);
+        System.out.println(info);
         
         Gson gson = new Gson();
-        kds_masters[] kds_mastersArray = gson.fromJson(info, kds_masters[].class);
+        usertablestatusess[] usertablestatusessArray = gson.fromJson(info, usertablestatusess[].class);
         System.out.println("done1");
         
     	Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-		cfg.addAnnotatedClass(kds_masters.class);
+		cfg.addAnnotatedClass(usertablestatusess.class);
 		cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 		System.out.println("done2");
-
+		
 		SessionFactory sessionFactory=cfg.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		System.out.println("done3");
 		try {
 			Transaction transaction=session.beginTransaction();
 			System.out.println("done4");
-			for (kds_masters spojo :kds_mastersArray) {
+			for (usertablestatusess spojo :usertablestatusessArray) {
 	               
-				kds_masters entity = new kds_masters();
+				usertablestatusess entity = new usertablestatusess();
                 System.out.println("done5");
                 entity.setId(spojo.getId());
                 entity.setCreated_at(spojo.getCreated_at());
                 entity.setUpdated_at(spojo.getUpdated_at());
-                entity.setStore_id(spojo.getStore_id());
-                entity.setKds_id(spojo.getKds_id());
-                entity.setIs_active(spojo.getIs_active());
+                entity.setUserid(spojo.getUserid());
+                entity.setStatus(spojo.getUserid());
+                entity.setNextstatus(spojo.getNextstatus());
+                entity.setIsactive(spojo.getIsactive());
+                entity.setCreatedby(spojo.getCreatedby());
   
                 // Save the entity to the database
-                session.saveOrUpdate(entity);;
+                session.save(entity);
             }
 			 transaction.commit();
 	            System.out.println("Saved");

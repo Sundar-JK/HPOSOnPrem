@@ -9,6 +9,12 @@ import jakarta.persistence.Table;
 @Table(name = "usertablestatusess_table")
 public class usertablestatusess {
 
+	@Override
+	public String toString() {
+		return "usertablestatusess [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", userid=" + userid + ", status=" + status + ", nextstatus=" + nextstatus + ", isactive=" + isactive
+				+ ", createdby=" + createdby + "]";
+	}
 	public int getId() {
 		return id;
 	}
@@ -97,4 +103,5 @@ public class usertablestatusess {
 	String createdby;
 	
 public usertablestatusess() {}
+
 }

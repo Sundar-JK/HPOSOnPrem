@@ -1,6 +1,8 @@
 package com.get;
 
 public class API {
+	public static final String getAllHospitalityTypes="getAllHospitalityTypes";
+	public static final String Storeconfig="storeconfiguration";
 	public static final String usertablelink="user_table_links";
 	public static final String tssc="tssc";
 	public static final String tabless= "tables";
@@ -40,4 +42,7 @@ public class API {
 	public static final String settings= "settings";
 	public static final String kds_master= "kds_master";
 	public static final String kds_user_links= "kds_user_links";
+	public static final String temptableheader= "temptrn";
+	public static final String temptrnordhdr= "temptrnordhdr";
+	public static final String temptrnorddet= "temptrnorddet";
 }

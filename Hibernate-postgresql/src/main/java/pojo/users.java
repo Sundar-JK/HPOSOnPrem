@@ -8,6 +8,11 @@ import jakarta.persistence.Table;
 @Table(name="users")
 public class users {
 
+	@Override
+	public String toString() {
+		return "users [id=" + id + ", name=" + name + ", email=" + email + ", role=" + role + ", shift_id=" + shift_id
+				+ ", branch_id=" + branch_id + "]";
+	}
 	public int getId() {
 		return id;
 	}
@@ -70,5 +75,7 @@ public class users {
 	String shift_id;
 	@Column(name="branchId")
 	String branch_id;
-public users() {}	
+public users() {}
+
+
 }
