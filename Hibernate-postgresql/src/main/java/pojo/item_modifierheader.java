@@ -9,6 +9,15 @@ import jakarta.persistence.Table;
 @Table(name = "itemmodifiers_headers")
 public class item_modifierheader {
 
+	@Override
+	public String toString() {
+		return "item_modifierheader [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", code="
+				+ code + ", description=" + description + ", prompt=" + prompt + ", display_option=" + display_option
+				+ ", once_per_transaction=" + once_per_transaction + ", min_selection=" + min_selection
+				+ ", max_selection=" + max_selection + ", start_date=" + start_date + ", end_date=" + end_date
+				+ ", multiple_selection=" + multiple_selection + ", triggering=" + triggering + ", priority=" + priority
+				+ ", uom=" + uom + ", item_no=" + item_no + "]";
+	}
 	public int getId() {
 		return id;
 	}

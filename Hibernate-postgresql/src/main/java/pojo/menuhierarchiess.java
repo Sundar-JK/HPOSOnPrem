@@ -9,6 +9,13 @@ import jakarta.persistence.Table;
 @Table(name = "menihierarchies_table")
 public class menuhierarchiess {
 
+	@Override
+	public String toString() {
+		return "menuhierarchiess [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", hierarchy_label=" + hierarchy_label + ", hierarchy_code=" + hierarchy_code + ", parent_id="
+				+ parent_id + ", is_active=" + is_active + ", section_code=" + section_code + ", section_name="
+				+ section_name + "]";
+	}
 	public int getId() {
 		return id;
 	}

@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 import pojo.users;
 
 public class userget {
-	public static void main(String[] args) {
+	public void fetchuserget() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.users ;
         String info = executeGet(fullUrl);

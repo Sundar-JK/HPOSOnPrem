@@ -17,10 +17,10 @@ import pojo.kds_masters;
 
 public class kdsmasterss {
 
-	public static void main(String[] args) {
+	public  void fetchDataAndSavedb(String date) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.kds_master ;
-        String info = executeGet(fullUrl);
+        String info = executeGet(fullUrl,date);
 //        System.out.println(info);
         
         Gson gson = new Gson();
@@ -63,7 +63,7 @@ public class kdsmasterss {
 		}  
 	}
 	
-	public static String executeGet(String targetURL) {
+	public static String executeGet(String targetURL,String date) {
         HttpURLConnection connection = null;  
 
         try {
@@ -74,7 +74,8 @@ public class kdsmasterss {
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Authorization","2655|b9XXT5u06JOJuSSzvlDZ29VQNSIIxkvKDzGyBqRc");
             connection.setRequestProperty("Iadcasdoc", "12");
-            connection.setRequestProperty("Oioizxeds", "18");            
+            connection.setRequestProperty("Oioizxeds", "18");
+            connection.setRequestProperty("updated_date", date);
             connection.setUseCaches(false);
             // Get Response
             InputStream is = connection.getInputStream();
@@ -98,4 +99,6 @@ public class kdsmasterss {
             }
         }
     }
+	
+	
 }

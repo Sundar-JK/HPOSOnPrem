@@ -18,16 +18,12 @@ public class getAllHospitalityTypesfetch {
 		Configuration cfg =new Configuration();
 		cfg.configure("hibernate.cfg.xml");
 		cfg.addAnnotatedClass(getAllHospitalityTypess.class);
-		System.out.println("configuration done");
-		
+		System.out.println("configuration done");		
 		SessionFactory sessionFactory=cfg.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		System.out.println("Session factory done");
 		Transaction transaction=session.beginTransaction();
 		List<getAllHospitalityTypess> hospitality = session.createQuery("FROM getAllHospitalityTypess").list();
-
-
-		
 		transaction.commit();
 		 session.close();
 	     sessionFactory.close();

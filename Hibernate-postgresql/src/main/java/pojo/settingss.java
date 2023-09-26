@@ -9,6 +9,11 @@ import jakarta.persistence.Table;
 @Table(name = "settings_table")
 public class settingss {
 
+	@Override
+	public String toString() {
+		return "settingss [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", user=" + user
+				+ ", store=" + store + ", setup=" + setup + ", is_active=" + is_active + ", tenant=" + tenant + "]";
+	}
 	public int getId() {
 		return id;
 	}

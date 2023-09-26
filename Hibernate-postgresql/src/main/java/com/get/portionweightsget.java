@@ -17,7 +17,7 @@ import pojo.portionweights;
 
 public class portionweightsget {
 
-	public static void main(String[] args) {
+	public void fetchportionweights() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.portion_weights ;
         String info = executeGet(fullUrl);

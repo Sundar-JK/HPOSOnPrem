@@ -45,4 +45,7 @@ public class API {
 	public static final String temptableheader= "temptrn";
 	public static final String temptrnordhdr= "temptrnordhdr";
 	public static final String temptrnorddet= "temptrnorddet";
+	public static final String tablestatuses="tablestatuses";
+	public static final String getItemsWithVat_12="getItemsWithVat/12";
+	public static final String item_discounts="item_discounts";
 }

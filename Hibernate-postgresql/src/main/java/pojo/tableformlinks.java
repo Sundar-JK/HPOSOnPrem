@@ -9,6 +9,12 @@ import jakarta.persistence.Table;
 @Table(name = "tableformlinks_table")
 public class tableformlinks {
 	
+	@Override
+	public String toString() {
+		return "tableformlinks [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", form_id="
+				+ form_id + ", table_name=" + table_name + ", model_name=" + model_name + ", is_active=" + is_active
+				+ ", user_id=" + user_id + "]";
+	}
 	public int getId() {
 		return id;
 	}

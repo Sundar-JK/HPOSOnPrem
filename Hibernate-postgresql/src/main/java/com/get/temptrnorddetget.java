@@ -17,7 +17,7 @@ import pojo.temptrnorddet;
 
 public class temptrnorddetget {
 
-	public static void main(String[] args) {
+	public void fetchtrnorddet() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.temptrnorddet ;
         String info = executeGet(fullUrl);

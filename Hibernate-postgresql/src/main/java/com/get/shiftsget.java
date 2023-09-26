@@ -17,7 +17,7 @@ import pojo.shifts;
 
 public class shiftsget {
 
-	public static void main(String[] args) {
+	public void fetchshiftget() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.shift ;
         String info = executeGet(fullUrl);

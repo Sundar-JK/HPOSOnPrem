@@ -17,7 +17,7 @@ import pojo.product_groupmasters;
 
 public class productgroupmasterget {
 
-	public static void main(String[] args) {
+	public static void fetchprdtgrupmstrs() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.product_group_masters ;
         String info = executeGet(fullUrl);

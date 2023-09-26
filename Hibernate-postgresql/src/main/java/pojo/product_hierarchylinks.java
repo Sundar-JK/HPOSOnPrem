@@ -9,6 +9,11 @@ import jakarta.persistence.Table;
 @Table(name = "producthierarchy_table")
 public class product_hierarchylinks {
 
+	@Override
+	public String toString() {
+		return "product_hierarchylinks [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", product_id=" + product_id + ", hierarchy_id=" + hierarchy_id + "]";
+	}
 	public int getId() {
 		return id;
 	}

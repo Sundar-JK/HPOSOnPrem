@@ -20,7 +20,7 @@ import pojo.sectionss;
 public class sectionsget {
 
 	
-	public static void main(String[] args) {
+	public void fetchsections() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.sections ;
         String info = executeGet(fullUrl);

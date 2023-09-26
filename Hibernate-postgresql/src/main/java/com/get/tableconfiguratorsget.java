@@ -17,7 +17,7 @@ import pojo.tableconfigurators;
 
 public class tableconfiguratorsget {
 
-	public static void main(String[] args) {
+	public void fetchtableconfigurator() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.table_configurators ;
         String info = executeGet(fullUrl);

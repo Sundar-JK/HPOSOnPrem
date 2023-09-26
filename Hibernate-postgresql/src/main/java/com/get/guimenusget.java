@@ -17,7 +17,7 @@ import pojo.guimenuses;
 
 public class guimenusget {
 
-	public static void main(String[] args) {
+	public void fetchguimenus() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.gui_menuses ;
         String info = executeGet(fullUrl);

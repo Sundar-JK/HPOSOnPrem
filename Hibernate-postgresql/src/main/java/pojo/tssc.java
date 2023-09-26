@@ -9,6 +9,13 @@ import jakarta.persistence.Table;
 @Table(name="tssc_table")
 public class tssc {
 	
+	@Override
+	public String toString() {
+		return "tssc [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", tableid=" + tableid
+				+ ", status=" + status + ", notes=" + notes + ", status_icon=" + status_icon + ", transaction_ref_id="
+				+ transaction_ref_id + ", user_id=" + user_id + ", previous_status=" + previous_status
+				+ ", guest_count=" + guest_count + "]";
+	}
 	public int getId() {
 		return id;
 	}

@@ -9,6 +9,31 @@ import jakarta.persistence.Table;
 @Table(name = "Couponheaders_table")
 public class Couponheaders {
 
+	@Override
+	public String toString() {
+		return "Couponheaders [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", code="
+				+ code + ", coupon_issuer=" + coupon_issuer + ", coupon_reference_no=" + coupon_reference_no
+				+ ", description=" + description + ", description_2=" + description_2 + ", price_group=" + price_group
+				+ ", discount_type=" + discount_type + ", validation_period_id=" + validation_period_id + ", status="
+				+ status + ", type=" + type + ", handling=" + handling + ", no_of_items_to_trigger="
+				+ no_of_items_to_trigger + ", apply_to_no_of_items=" + apply_to_no_of_items + ", affects=" + affects
+				+ ", no_series=" + no_series + ", multiply_value=" + multiply_value + ", multiply_value_period_id="
+				+ multiply_value_period_id + ", issue_at_pos=" + issue_at_pos + ", loyalty_scheme=" + loyalty_scheme
+				+ ", discount__of_total=" + discount__of_total + ", rounding_method=" + rounding_method
+				+ ", extra_print_setup=" + extra_print_setup + ", barcode_mask=" + barcode_mask + ", member_type="
+				+ member_type + ", member_value=" + member_value + ", first_valid_date_formula="
+				+ first_valid_date_formula + ", last_valid_date_formula=" + last_valid_date_formula
+				+ ", barcode_element_1=" + barcode_element_1 + ", barcode_element_2=" + barcode_element_2
+				+ ", barcode_element_3=" + barcode_element_3 + ", barcode_element_4=" + barcode_element_4
+				+ ", barcode_element_5=" + barcode_element_5 + ", barcode_element_6=" + barcode_element_6
+				+ ", barcode_element_7=" + barcode_element_7 + ", barcode_element_8=" + barcode_element_8
+				+ ", calculation_type=" + calculation_type + ", value=" + value + ", entry_validation="
+				+ entry_validation + ", posting_type=" + posting_type + ", posting_account=" + posting_account
+				+ ", buyer_id=" + buyer_id + ", buyer_group_code=" + buyer_group_code + ", offline_process="
+				+ offline_process + ", coupon_id_method=" + coupon_id_method + ", max_per_member=" + max_per_member
+				+ ", minimum_trans_amount=" + minimum_trans_amount + ", maximum_trans_amount=" + maximum_trans_amount
+				+ "]";
+	}
 	public int getId() {
 		return id;
 	}

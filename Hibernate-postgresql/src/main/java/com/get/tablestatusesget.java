@@ -13,23 +13,24 @@ import org.hibernate.cfg.Configuration;
 
 import com.google.gson.Gson;
 
-import pojo.usertablestatusess;
+import pojo.tabless;
+import pojo.tablestatuses;
 
-public class usertablestatuses {
+public class tablestatusesget {
 
-	public void fetchusertablestatuses() {
+	public static void main(String[] args) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
-        String fullUrl = preurl + API.usertablestatuses ;
+        String fullUrl = preurl + API.tablestatuses ;
         String info = executeGet(fullUrl);
         System.out.println(info);
         
         Gson gson = new Gson();
-        usertablestatusess[] usertablestatusessArray = gson.fromJson(info, usertablestatusess[].class);
+        tablestatuses[] tablestatusesArray = gson.fromJson(info, tablestatuses[].class);
         System.out.println("done1");
         
     	Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-		cfg.addAnnotatedClass(usertablestatusess.class);
+		cfg.addAnnotatedClass(tablestatuses.class);
 		cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 		System.out.println("done2");
 		
@@ -39,19 +40,17 @@ public class usertablestatuses {
 		try {
 			Transaction transaction=session.beginTransaction();
 			System.out.println("done4");
-			for (usertablestatusess spojo :usertablestatusessArray) {
+			for (tablestatuses spojo :tablestatusesArray) {
 	               
-				usertablestatusess entity = new usertablestatusess();
+				tablestatuses entity = new tablestatuses();
                 System.out.println("done5");
                 entity.setId(spojo.getId());
                 entity.setCreated_at(spojo.getCreated_at());
                 entity.setUpdated_at(spojo.getUpdated_at());
-                entity.setUserid(spojo.getUserid());
-                entity.setStatus(spojo.getUserid());
-                entity.setNextstatus(spojo.getNextstatus());
-                entity.setIsactive(spojo.getIsactive());
-                entity.setCreatedby(spojo.getCreatedby());
-  
+                entity.setStatus_label(spojo.getStatus_label());
+                entity.setIcon(spojo.getIcon());
+                entity.setLabel_color(spojo.getLabel_color());
+
                 // Save the entity to the database
                 session.save(entity);
             }
@@ -64,7 +63,6 @@ public class usertablestatuses {
 	            sessionFactory.close();
 		}  
 	}
-	
 	public static String executeGet(String targetURL) {
         HttpURLConnection connection = null;  
 

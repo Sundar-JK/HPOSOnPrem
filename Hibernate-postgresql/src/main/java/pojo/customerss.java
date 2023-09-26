@@ -9,6 +9,16 @@ import jakarta.persistence.Table;
 @Table(name = "customers_table")
 public class customerss {
 
+	@Override
+	public String toString() {
+		return "customerss [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", customer_id="
+				+ customer_id + ", company_code=" + company_code + ", no=" + no + ", first_name=" + first_name
+				+ ", last_name=" + last_name + ", salutation=" + salutation + ", nationality=" + nationality
+				+ ", country_code=" + country_code + ", credit_customer=" + credit_customer + ", vat_registraion_no="
+				+ vat_registraion_no + ", mobile_no=" + mobile_no + ", alt_mobile_no=" + alt_mobile_no + ", email="
+				+ email + ", status=" + status + ", created_by=" + created_by + ", created_date=" + created_date
+				+ ", updated_by=" + updated_by + ", updated_date=" + updated_date + "]";
+	}
 	public int getId() {
 		return id;
 	}

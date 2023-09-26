@@ -8,17 +8,13 @@ import jakarta.persistence.Table;
 @Table(name="Tables")
 public class tabless {
 
+	
 	@Override
 	public String toString() {
 		return "tabless [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", layoutcode="
 				+ layoutcode + ", description=" + description + ", maximum_guests=" + maximum_guests
 				+ ", trigger_alert_after_min=" + trigger_alert_after_min + ", hospitality_type=" + hospitality_type
-				+ ", section=" + section + ", getId()=" + getId() + ", getCreated_at()=" + getCreated_at()
-				+ ", getUpdated_at()=" + getUpdated_at() + ", getLayoutcode()=" + getLayoutcode()
-				+ ", getDescription()=" + getDescription() + ", getMaximum_guests()=" + getMaximum_guests()
-				+ ", getTrigger_alert_after_min()=" + getTrigger_alert_after_min() + ", getHospitality_type()="
-				+ getHospitality_type() + ", getSection()=" + getSection() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", section=" + section + "]";
 	}
 	public int getId() {
 		return id;

@@ -6,17 +6,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "itempricess_table")
-public class itempricess {
+@Table(name = "Item_discount_table")
+public class itemdiscounts {
 
 	@Override
 	public String toString() {
-		return "itempricess [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", item_no="
+		return "itemdiscounts [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", item_no="
 				+ item_no + ", store_code=" + store_code + ", unit_price=" + unit_price + ", unit_price_incl_vat="
 				+ unit_price_incl_vat + ", start_date=" + start_date + ", end_date=" + end_date + ", uom=" + uom
-				+ ", vat_code=" + vat_code + ", location_code=" + location_code + ", variant_code=" + variant_code
-				+ ", currency_code=" + currency_code + ", start_time=" + start_time + ", end_time=" + end_time
-				+ ", item_price=" + item_price + "]";
+				+ ", discount_amount=" + discount_amount + ", discount_percentage=" + discount_percentage
+				+ ", location_code=" + location_code + ", variant_code=" + variant_code + ", currency_code="
+				+ currency_code + ", start_time=" + start_time + ", end_time=" + end_time + ", item_price=" + item_price
+				+ "]";
 	}
 	public int getId() {
 		return id;
@@ -78,11 +79,17 @@ public class itempricess {
 	public void setUom(String uom) {
 		this.uom = uom;
 	}
-	public String getVat_code() {
-		return vat_code;
+	public String getDiscount_amount() {
+		return discount_amount;
 	}
-	public void setVat_code(String vat_code) {
-		this.vat_code = vat_code;
+	public void setDiscount_amount(String discount_amount) {
+		this.discount_amount = discount_amount;
+	}
+	public String getDiscount_percentage() {
+		return discount_percentage;
+	}
+	public void setDiscount_percentage(String discount_percentage) {
+		this.discount_percentage = discount_percentage;
 	}
 	public String getLocation_code() {
 		return location_code;
@@ -121,10 +128,11 @@ public class itempricess {
 		this.item_price = item_price;
 	}
 	
-	public itempricess(int id, String created_at, String updated_at, String item_no, String store_code,
+	
+	public itemdiscounts(int id, String created_at, String updated_at, String item_no, String store_code,
 			String unit_price, String unit_price_incl_vat, String start_date, String end_date, String uom,
-			String vat_code, String location_code, String variant_code, String currency_code, String start_time,
-			String end_time, String item_price) {
+			String discount_amount, String discount_percentage, String location_code, String variant_code,
+			String currency_code, String start_time, String end_time, String item_price) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -136,7 +144,8 @@ public class itempricess {
 		this.start_date = start_date;
 		this.end_date = end_date;
 		this.uom = uom;
-		this.vat_code = vat_code;
+		this.discount_amount = discount_amount;
+		this.discount_percentage = discount_percentage;
 		this.location_code = location_code;
 		this.variant_code = variant_code;
 		this.currency_code = currency_code;
@@ -144,54 +153,63 @@ public class itempricess {
 		this.end_time = end_time;
 		this.item_price = item_price;
 	}
-	
+
 	@Id
 	@Column(name="Id")
 	int id;
 	
-	@Column(name="createdAt")
+	@Column(name="Created_at")
 	String created_at;
 	
-	@Column(name="updatedAt")
+	@Column(name="Updated_at")
 	String updated_at;
 	
-	@Column(name="itemNo")
+	@Column(name="Item_no")
 	String item_no;
 	
-	@Column(name="storeCode")
+	@Column(name="Store_Code")
 	String store_code;
 	
-	@Column(name="unitPrice")
+	@Column(name="UnitPrice")
 	String unit_price;
 	
-	@Column(name="unitPriceinclvat")
+	@Column(name="Unit_Price_Incl_vat")
 	String unit_price_incl_vat;
 	
-	@Column(name="startDate")
+	@Column(name="Start_Date")
 	String start_date;
 	
-	@Column(name="endDate")
+	@Column(name="End_Date")
 	String end_date;
+	
 	@Column(name="Uom")
 	String uom;
-	@Column(name="VatCode")
-	String vat_code;
 	
-	@Column(name="locationCode")
+	@Column(name="Discount_amount")
+	String discount_amount;
+	
+	@Column(name="Discount_Percnt")
+	String discount_percentage;
+	
+	@Column(name="Location_Code")
 	String location_code;
 	
-	@Column(name="varaintCode")
+	@Column(name="Variant_Code")
 	String variant_code;
-	@Column(name="CurrencyCode")
+	
+	@Column(name="Currency_Code")
 	String currency_code;
 	
-	@Column(name="startTime")
+	@Column(name="Start_Time")
 	String start_time;
-	@Column(name="endTime")
+	
+	@Column(name="End_Time")
 	String end_time;
 	
-	@Column(name="ItemPrice")
+	@Column(name="Item_Price")
 	String item_price;
 	
-public itempricess() {}
+	public itemdiscounts() {
+		
+	}
 }

@@ -9,6 +9,19 @@ import jakarta.persistence.Table;
 @Table(name = "Erpmasters_table")
 public class erp_itemmaster {
 
+	@Override
+	public String toString() {
+		return "erp_itemmaster [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", arabic_description=" + arabic_description + ", brand_name=" + brand_name + ", band_code="
+				+ band_code + ", category_name=" + category_name + ", combo_menu=" + combo_menu + ", company_code="
+				+ company_code + ", creation_date_time=" + creation_date_time + ", invent_price=" + invent_price
+				+ ", invent_unit=" + invent_unit + ", item_code=" + item_code + ", item_description=" + item_description
+				+ ", item_group=" + item_group + ", item_model_group=" + item_model_group + ", item_name=" + item_name
+				+ ", modified_date_time=" + modified_date_time + ", purch_price=" + purch_price + ", purch_unit="
+				+ purch_unit + ", sales_price=" + sales_price + ", sales_unit=" + sales_unit + ", sction_name="
+				+ sction_name + ", serch_name=" + serch_name + ", shelf_life=" + shelf_life + ", vendor_no=" + vendor_no
+				+ "]";
+	}
 	public int getId() {
 		return id;
 	}

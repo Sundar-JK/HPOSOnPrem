@@ -9,6 +9,11 @@ import jakarta.persistence.Table;
 @Table(name = "kdsuserlink_table")
 public class kdsuser_links {
 
+	@Override
+	public String toString() {
+		return "kdsuser_links [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", user_id="
+				+ user_id + ", kds_id=" + kds_id + ", is_active=" + is_active + "]";
+	}
 	public int getId() {
 		return id;
 	}

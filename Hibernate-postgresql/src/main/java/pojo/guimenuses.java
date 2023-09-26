@@ -9,6 +9,13 @@ import jakarta.persistence.Table;
 @Table(name = "guimenus_table")
 public class guimenuses {
 
+	@Override
+	public String toString() {
+		return "guimenuses [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", gui_menu_label=" + gui_menu_label + ", gui_menu_code=" + gui_menu_code + ", icon=" + icon
+				+ ", color=" + color + ", badge_color=" + badge_color + ", parent_id=" + parent_id + ", is_active="
+				+ is_active + ", form_id=" + form_id + "]";
+	}
 	public int getId() {
 		return id;
 	}

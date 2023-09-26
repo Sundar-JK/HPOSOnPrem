@@ -9,6 +9,12 @@ import jakarta.persistence.Table;
 @Table(name = "productgroupmasters_table")
 public class product_groupmasters {
 
+	@Override
+	public String toString() {
+		return "product_groupmasters [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", product_group_label=" + product_group_label + ", product_group_code=" + product_group_code
+				+ ", extra=" + extra + ", is_active=" + is_active + "]";
+	}
 	public int getId() {
 		return id;
 	}

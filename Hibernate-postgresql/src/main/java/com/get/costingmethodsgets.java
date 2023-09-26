@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 import pojo.costingmethods;
 
 public class costingmethodsgets {
-	public static void main(String[] args) {
+	public void fetchcostings() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.costing_methods ;
         String info = executeGet(fullUrl);

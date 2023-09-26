@@ -22,12 +22,10 @@ public class Hposfetch {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         Configuration cfg = new Configuration();
         cfg.configure("hibernate.cfg.xml");
         cfg.addAnnotatedClass(users.class);
-        cfg.addAnnotatedClass(storeconfigurationss.class); // Add the entity class here
-
+        cfg.addAnnotatedClass(storeconfigurationss.class);
         System.out.println("Configuration Done");
 
         SessionFactory sessionFactory = cfg.buildSessionFactory();

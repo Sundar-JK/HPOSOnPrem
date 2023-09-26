@@ -9,6 +9,13 @@ import jakarta.persistence.Table;
 @Table(name = "portionweight_table")
 public class portionweights {
 
+	@Override
+	public String toString() {
+		return "portionweights [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", portion_weight_label=" + portion_weight_label + ", portion_weight_code=" + portion_weight_code
+				+ ", portion_weight_value=" + portion_weight_value + ", extra=" + extra + ", is_active=" + is_active
+				+ "]";
+	}
 	public int getId() {
 		return id;
 	}

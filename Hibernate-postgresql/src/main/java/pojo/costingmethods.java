@@ -9,6 +9,12 @@ import jakarta.persistence.Table;
 @Table(name = "costingmethods_table")
 public class costingmethods {
 	
+	@Override
+	public String toString() {
+		return "costingmethods [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", costing_label=" + costing_label + ", costing_code=" + costing_code + ", extra=" + extra
+				+ ", is_active=" + is_active + "]";
+	}
 	public int getId() {
 		return id;
 	}

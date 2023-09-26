@@ -13,12 +13,10 @@ public class getAllHospitalityTypess {
 	public String toString() {
 		return "getAllHospitalityTypess [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
 				+ ", code=" + code + ", description=" + description + ", store_code=" + store_code + ", layout_view="
-				+ layout_view + ", is_active=" + is_active + ", getId()=" + getId() + ", getCreated_at()="
-				+ getCreated_at() + ", getUpdated_at()=" + getUpdated_at() + ", getCode()=" + getCode()
-				+ ", getDescription()=" + getDescription() + ", getStore_code()=" + getStore_code()
-				+ ", getLayout_view()=" + getLayout_view() + ", getIs_active()=" + getIs_active() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ layout_view + ", is_active=" + is_active + "]";
 	}
+	
+
 	public int getId() {
 		return id;
 	}

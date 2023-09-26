@@ -9,6 +9,12 @@ import jakarta.persistence.Table;
 @Table(name = "vatmasters_table")
 public class vatmasterss {
 	
+	@Override
+	public String toString() {
+		return "vatmasterss [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", vat_code="
+				+ vat_code + ", vat_percent=" + vat_percent + ", start_date=" + start_date + ", end_date=" + end_date
+				+ ", description=" + description + "]";
+	}
 	public int getId() {
 		return id;
 	}

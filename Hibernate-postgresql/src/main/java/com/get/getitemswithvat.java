@@ -13,24 +13,24 @@ import org.hibernate.cfg.Configuration;
 
 import com.google.gson.Gson;
 
-import pojo.menuitems;
+import pojo.getItemsWithVat;
+import pojo.tablestatuses;
 
-public class menuitemsget {
+public class getitemswithvat {
 
-
-	public void fetchmenuitems() {
+	public static void main(String[] args) {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
-        String fullUrl = preurl + API.menuitems ;
+        String fullUrl = preurl + API.getItemsWithVat_12 ;
         String info = executeGet(fullUrl);
         System.out.println(info);
         
         Gson gson = new Gson();
-        menuitems[] menuitemsArray = gson.fromJson(info, menuitems[].class);
+        getItemsWithVat[] getItemsWithVatArray = gson.fromJson(info, getItemsWithVat[].class);
         System.out.println("done1");
         
     	Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
-		cfg.addAnnotatedClass(menuitems.class);
+		cfg.addAnnotatedClass(getItemsWithVat.class);
 		cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 		System.out.println("done2");
 		
@@ -40,16 +40,25 @@ public class menuitemsget {
 		try {
 			Transaction transaction=session.beginTransaction();
 			System.out.println("done4");
-			for (menuitems spojo :menuitemsArray) {
+			for (getItemsWithVat spojo :getItemsWithVatArray) {
 	               
-				menuitems entity = new menuitems();
+				getItemsWithVat entity = new getItemsWithVat();
                 System.out.println("done5");
+                entity.setStore_code(spojo.getStore_code());
+                entity.setId_discount_amount(spojo.getId_discount_amount());
+                entity.setId_discount_percentage(spojo.getId_discount_percentage());
+                entity.setVm_vat_percent(spojo.getVm_vat_percent());
+                entity.setIp_unit_price(spojo.getIp_unit_price());
+                entity.setVm_total_percentage_with_tax(spojo.getVm_total_percentage_with_tax());
+                entity.setCalculated_vat(spojo.getCalculated_vat());
+                entity.setCalculated_discount(spojo.getCalculated_discount());
+                entity.setVat_code(spojo.getVat_code());
+                entity.setItem_no(spojo.getItem_no());
                 entity.setId(spojo.getId());
                 entity.setCreated_at(spojo.getCreated_at());
                 entity.setUpdated_at(spojo.getUpdated_at());
                 entity.setNo(spojo.getNo());
                 entity.setDescription(spojo.getDescription());
-                
                 entity.setArabic_description(spojo.getArabic_description());
                 entity.setAssembly_bom(spojo.getAssembly_bom());
                 entity.setBase_unit_of_measure(spojo.getBase_unit_of_measure());
@@ -79,8 +88,9 @@ public class menuitemsget {
                 entity.setExclude_from_menu_requisition(spojo.getExclude_from_menu_requisition());
                 entity.setRecipe_no_of_portions(spojo.getRecipe_no_of_portions());
                 entity.setMax_modifiers_no_price(spojo.getMax_modifiers_no_price());
-                entity.setMax_ingr_removed_no_price(spojo.getMax_ingr_removed_no_price());
                 entity.setMax_ingr_modifiers(spojo.getMax_ingr_modifiers());
+                entity.setMax_ingr_removed_no_price(spojo.getMax_ingr_removed_no_price());
+                entity.setMax_modifiers_no_price(spojo.getMax_modifiers_no_price());
                 entity.setProduction_time_min(spojo.getProduction_time_min());
                 entity.setDisplay_ingredients_in_monitor(spojo.getDisplay_ingredients_in_monitor());
                 entity.setDisplay_instruct_in_monitor(spojo.getDisplay_instruct_in_monitor());
@@ -92,7 +102,6 @@ public class menuitemsget {
                 entity.setUnit_price_including_vat(spojo.getUnit_price_including_vat());
                 entity.setWarranty_period(spojo.getWarranty_period());
                 entity.setHierarchy(spojo.getHierarchy());
-                entity.setVat_code(spojo.getVat_code());
                 entity.setUnit_price_amount(spojo.getUnit_price_amount());
                 entity.setUnit_price_without_tax(spojo.getUnit_price_without_tax());
                 entity.setGross_amount(spojo.getGross_amount());
@@ -100,9 +109,10 @@ public class menuitemsget {
                 entity.setNet_amount(spojo.getNet_amount());
                 entity.setAmount_without_tax(spojo.getAmount_without_tax());
                 entity.setTax_amount(spojo.getTax_amount());
-                entity.setPrice_includes_tax(spojo.isPrice_includes_tax());
                 entity.setVariant_code(spojo.getVariant_code());
-  
+//                entity.setProduct_images(spojo.getProduct_images());
+
+
                 // Save the entity to the database
                 session.save(entity);
             }
@@ -113,7 +123,7 @@ public class menuitemsget {
 		}finally {
 			 session.close();
 	            sessionFactory.close();
-		}  
+		} 
 	}
 	public static String executeGet(String targetURL) {
         HttpURLConnection connection = null;  

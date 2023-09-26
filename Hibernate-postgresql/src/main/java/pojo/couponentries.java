@@ -9,6 +9,23 @@ import jakarta.persistence.Table;
 @Table(name = "couponcountries_table")
 public class couponentries {
 
+	@Override
+	public String toString() {
+		return "couponentries [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", store_no="
+				+ store_no + ", pos_terminal_no=" + pos_terminal_no + ", transaction_no=" + transaction_no
+				+ ", coupon_code=" + coupon_code + ", line_no=" + line_no + ", coupon_reference_no="
+				+ coupon_reference_no + ", coupon_no=" + coupon_no + ", barcode=" + barcode + ", issued_by_store="
+				+ issued_by_store + ", issued_by_pos_terminal=" + issued_by_pos_terminal + ", issue_date=" + issue_date
+				+ ", issued_by_user=" + issued_by_user + ", reserved_by_pos_terminal_no=" + reserved_by_pos_terminal_no
+				+ ", date_reserved_on_pos=" + date_reserved_on_pos + ", first_valid_date=" + first_valid_date
+				+ ", last_valid_date=" + last_valid_date + ", status=" + status + ", sequence_no=" + sequence_no
+				+ ", closed_by_store=" + closed_by_store + ", closed_by_terminal=" + closed_by_terminal
+				+ ", closed_date=" + closed_date + ", closed_by_user=" + closed_by_user + ", closed_by_entry_no="
+				+ closed_by_entry_no + ", discount_type=" + discount_type + ", value=" + value + ", value_type="
+				+ value_type + ", g_l_status=" + g_l_status + ", g_l_amount=" + g_l_amount + ", coupon_function="
+				+ coupon_function + ", fbp_ledger_entry_no=" + fbp_ledger_entry_no + ", member_account_no="
+				+ member_account_no + "]";
+	}
 	public int getId() {
 		return id;
 	}

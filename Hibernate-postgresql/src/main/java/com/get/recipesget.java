@@ -17,7 +17,7 @@ import com.google.gson.Gson;
 import pojo.recipes;
 
 public class recipesget {
-	public static void main(String[] args) {
+	public void fetchrecipes() {
         String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.recipes ;
         String info = executeGet(fullUrl);

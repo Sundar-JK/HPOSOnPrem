@@ -17,7 +17,7 @@ import pojo.divisionmasters;
 
 public class divisionmastersget {
 
-	public static void main(String[] args) {
+	public void fetchdivisionmstrs() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.division_masters ;
         String info = executeGet(fullUrl);

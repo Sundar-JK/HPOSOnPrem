@@ -9,6 +9,12 @@ import jakarta.persistence.Table;
 @Table(name = "Unitofmeasures_table")
 public class unitofmeasures {
 
+	@Override
+	public String toString() {
+		return "unitofmeasures [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", code="
+				+ code + ", description=" + description + ", international_standard_code=" + international_standard_code
+				+ "]";
+	}
 	public int getId() {
 		return id;
 	}

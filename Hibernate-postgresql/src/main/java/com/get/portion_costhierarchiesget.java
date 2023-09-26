@@ -17,7 +17,7 @@ import pojo.portioncosthierarchies;
 
 public class portion_costhierarchiesget {
 
-	public static void main(String[] args) {
+	public static void fetchportioncosthierarchies() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.portion_cost_hierarchies ;
         String info = executeGet(fullUrl);

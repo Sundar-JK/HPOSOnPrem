@@ -17,7 +17,7 @@ import pojo.Couponheaders;
 
 public class couponheadersget {
 
-	public static void main(String[] args) {
+	public  void fetchcoupnhdrs() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.coupon_headers ;
         String info = executeGet(fullUrl);

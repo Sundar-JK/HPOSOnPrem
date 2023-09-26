@@ -17,7 +17,7 @@ import pojo.numberseries;
 
 public class numberseriesget {
 
-	public static void main(String[] args) {
+	public void fetchnumberseries() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.number_series ;
         String info = executeGet(fullUrl);

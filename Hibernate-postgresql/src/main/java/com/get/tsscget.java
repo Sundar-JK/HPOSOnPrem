@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 import pojo.tssc;
 
 public class tsscget {
-	public static void main(String[] args) {
+	public void fetchtsscget() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.tssc ;
         String info = executeGet(fullUrl);

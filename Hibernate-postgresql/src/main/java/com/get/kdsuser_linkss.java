@@ -18,7 +18,7 @@ import pojo.kdsuser_links;
 public class kdsuser_linkss {
 
 	
-	public static void main(String[] args) {
+	public void fetchDataAndSavedb() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.kds_user_links ;
         String info = executeGet(fullUrl);

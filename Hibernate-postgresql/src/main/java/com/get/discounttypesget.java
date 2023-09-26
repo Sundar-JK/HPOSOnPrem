@@ -17,7 +17,7 @@ import pojo.discounttypess;
 
 public class discounttypesget {
 
-	public static void main(String[] args) {
+	public static void fetchdiscountypes() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.discounttypes ;
         String info = executeGet(fullUrl);

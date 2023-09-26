@@ -10,6 +10,21 @@ import jakarta.persistence.Table;
 public class addonss {
 
 
+	@Override
+	public String toString() {
+		return "addonss [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", parent_item_no="
+				+ parent_item_no + ", line_no=" + line_no + ", type=" + type + ", no=" + no + ", assembly_bom="
+				+ assembly_bom + ", description=" + description + ", unit_of_measure_code=" + unit_of_measure_code
+				+ ", quantity_per=" + quantity_per + ", resource_usage_type=" + resource_usage_type
+				+ ", bom_recipe_version_code=" + bom_recipe_version_code + ", bom_component_type=" + bom_component_type
+				+ ", recipe_version_code=" + recipe_version_code + ", wastage_=" + wastage_ + ", gross_weight="
+				+ gross_weight + ", net_weight=" + net_weight + ", cost=" + cost + ", exclude_from_menu_requisition="
+				+ exclude_from_menu_requisition + ", excluded_from_portion_weight=" + excluded_from_portion_weight
+				+ ", unaff_by_multipl_factor=" + unaff_by_multipl_factor + ", item_no=" + item_no
+				+ ", qty_per_recipe_noof_portions=" + qty_per_recipe_noof_portions + ", exclusion=" + exclusion
+				+ ", price_on_exclusion=" + price_on_exclusion + ", Category=" + Category + ", bom_description="
+				+ bom_description + "]";
+	}
 	public int getId() {
 		return id;
 	}
@@ -90,15 +105,6 @@ public class addonss {
 	public void setbom_description(String bom_description) {
 		this.bom_description = bom_description;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public String getResource_usage_type() {
 		return resource_usage_type;

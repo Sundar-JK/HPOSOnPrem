@@ -19,7 +19,7 @@ import pojo.vatmasterss;
 
 public class vatmastersget {
 	
-	public static void main(String[] args) {
+	public void fetchvatmasters() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.vat_masters ;
         String info = executeGet(fullUrl);

@@ -17,7 +17,7 @@ import pojo.couponentries;
 
 public class couponentriesget {
 
-	public static void main(String[] args) {
+	public void fetchcouponcontries() {
 	    String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
         String fullUrl = preurl + API.coupon_entries ;
         String info = executeGet(fullUrl);

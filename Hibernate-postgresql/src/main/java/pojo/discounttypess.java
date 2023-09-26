@@ -9,6 +9,11 @@ import jakarta.persistence.Table;
 @Table(name = "discounttypes_table")
 public class discounttypess {
 
+	@Override
+	public String toString() {
+		return "discounttypess [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at + ", label="
+				+ label + ", type=" + type + ", label_id=" + label_id + ", description=" + description + "]";
+	}
 	public int getId() {
 		return id;
 	}

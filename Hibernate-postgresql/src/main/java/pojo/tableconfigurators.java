@@ -9,6 +9,18 @@ import jakarta.persistence.Table;
 @Table(name = "tableconfigurators_table")
 public class tableconfigurators {
 
+	@Override
+	public String toString() {
+		return "tableconfigurators [id=" + id + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", enabled=" + enabled + ", field_no=" + field_no + ", field_name=" + field_name + ", caption="
+				+ caption + ", data_type=" + data_type + ", length=" + length + ", description=" + description
+				+ ", field_class=" + field_class + ", option_string=" + option_string + ", form_id=" + form_id
+				+ ", page_id=" + page_id + ", store_id=" + store_id + ", user_id=" + user_id + ", ui_columns="
+				+ ui_columns + ", priority=" + priority + ", group_id=" + group_id + ", group_label=" + group_label
+				+ ", mandatory=" + mandatory + ", option_type=" + option_type + ", option_url=" + option_url
+				+ ", option_key=" + option_key + ", option_label=" + option_label + ", form_enabled=" + form_enabled
+				+ "]";
+	}
 	public int getId() {
 		return id;
 	}
