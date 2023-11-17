@@ -22,6 +22,7 @@ public class TempTrnHeader {
 		 String preurl = "http://d365hposvmv1.uaenorth.cloudapp.azure.com:4003/HPOSServerUAT/public/api/";        
 	        String fullUrl = preurl + API.temptableheader ;
 	        String info = executeGet(fullUrl);
+	        System.out.println("arun");
 	        System.out.println(info);
 	        
 	        Gson gson = new Gson();

@@ -1,11 +1,17 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 @Entity
-@Table(name = "menuitems_table")
+@Table(name = "menuitems")
 public class MenuItems {
 
 
@@ -47,19 +53,19 @@ public class MenuItems {
 		this.id = id;
 	}
 
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
 
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 
@@ -497,7 +503,7 @@ public class MenuItems {
 
 
 
-		public MenuItems(int id, String created_at, String updated_at, String no, String description,
+		public MenuItems(int id, LocalDateTime created_at, LocalDateTime updated_at, String no, String description,
 			String arabic_description, String assembly_bom, String base_unit_of_measure, String unit_price,
 			String costing_method, String unit_cost, String vendor_no, String vendor_item_no, String last_date_modified,
 			String inventory, String no_series, String sales_unit_of_measure, String purch_unit_of_measure,
@@ -573,14 +579,17 @@ public class MenuItems {
 		
 	}
 		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="Id")
 		private int id;
 		
+		@CreationTimestamp
 		@Column(name="created_at")
-	    private String created_at;
+		private LocalDateTime created_at;
 		
+		@CreationTimestamp
 		@Column(name="updated_at")
-	    private String updated_at;
+		private LocalDateTime updated_at;
 		
 		@Column(name="no")
 	    private String no;
@@ -599,6 +608,7 @@ public class MenuItems {
 		
 		@Column(name="unit_price")
 	    private String unit_price;
+		
 		@Column(name="costing_method")
 	    private String costing_method;
 		

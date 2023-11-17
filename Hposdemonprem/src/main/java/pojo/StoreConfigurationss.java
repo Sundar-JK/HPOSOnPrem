@@ -1,12 +1,18 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="storeconfigutaions")
+@Table(name="storeconfigurations")
 public class StoreConfigurationss {
 
 
@@ -32,16 +38,16 @@ public class StoreConfigurationss {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 	public String getNo() {
@@ -124,7 +130,7 @@ public class StoreConfigurationss {
 	}
 	
 	
-	public StoreConfigurationss(int id, String created_at, String updated_at, String no, String name, String address,
+	public StoreConfigurationss(int id, LocalDateTime created_at, LocalDateTime updated_at, String no, String name, String address,
 			String address2, String city, String postcode, String storemanager_id, String storemanager_name,
 			String phone_no, String country_code, String email, String currency_code, String profile_code) {
 		super();
@@ -148,14 +154,17 @@ public class StoreConfigurationss {
 
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id")
-	int id;
+	private int id;
 	
-	@Column(name="CreatedAt")
-	String created_at;
+	@CreationTimestamp
+	@Column(name="created_at")
+	private LocalDateTime created_at;
 	
-	@Column(name="updatedAt")
-	String updated_at;
+	@CreationTimestamp
+	@Column(name="updated_at")
+	private LocalDateTime updated_at;
 	
 	@Column(name="no")
 	String no;
@@ -163,10 +172,10 @@ public class StoreConfigurationss {
 	@Column(name="name")
 	String name;
 	
-	@Column(name="Address")
+	@Column(name="address")
 	String address;
 	
-	@Column(name="Address2")
+	@Column(name="address2")
 	String address2;
 	
 	@Column(name="City")
@@ -175,25 +184,25 @@ public class StoreConfigurationss {
 	@Column(name="postcode")
 	String postcode;
 	
-	@Column(name="StoremanagerId")
+	@Column(name="storemanager_id")
 	String storemanager_id;
 	
-	@Column(name="StoremanagerName")
+	@Column(name="storemanager_name")
 	String storemanager_name;
 	
-	@Column(name="PhoneNo")
+	@Column(name="phone_no")
 	String phone_no;
 	
-	@Column(name="CountryCode")
+	@Column(name="country_code")
 	String country_code;
 	
-	@Column(name="Email")
+	@Column(name="email")
 	String email;
 	
-	@Column(name="CurrencyCode")
+	@Column(name="currency_code")
 	String currency_code;
 	
-	@Column(name="ProfileCode")
+	@Column(name="profile_code")
 	String profile_code;
 
 	public StoreConfigurationss() {}

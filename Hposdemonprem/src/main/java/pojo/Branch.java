@@ -1,5 +1,7 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
 public class Branch {
 
     @Override
@@ -24,17 +26,17 @@ public class Branch {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
-		this.created_at = created_at;
+	public void setCreated_at(LocalDateTime localDateTime) {
+		this.created_at = localDateTime;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
-		this.updated_at = updated_at;
+	public void setUpdated_at(LocalDateTime localDateTime) {
+		this.updated_at = localDateTime;
 	}
 	public String getNo() {
 		return no;
@@ -114,7 +116,7 @@ public class Branch {
 	public void setProfile_code(String profile_code) {
 		this.profile_code = profile_code;
 	}
-		public Branch(int id, String created_at, String updated_at, String no, String name, String address, String address2,
+		public Branch(int id, LocalDateTime created_at, LocalDateTime updated_at, String no, String name, String address, String address2,
 			String city, String postcode, String storemanager_id, String storemanager_name, String phone_no,
 			String country_code, String email, String currency_code, String profile_code) {
 		super();
@@ -136,8 +138,8 @@ public class Branch {
 		this.profile_code = profile_code;
 	}
 		int id;
-	     String created_at;
-	     String updated_at;
+	     LocalDateTime created_at;
+	     LocalDateTime updated_at;
 	     String no;
 	     String name;
 	     String address;

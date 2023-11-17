@@ -23,8 +23,7 @@ public class AddonController {
 		SessionFactory sessionFactory=cfg.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction=session.beginTransaction();
-		List<Addonss>AddonssList = session.createQuery("FROM Addonss", Addonss.class).list();
-		
+		List<Addonss>AddonssList = session.createQuery("FROM Addonss", Addonss.class).list();		
 		transaction.commit();
 		 session.close();
 	     sessionFactory.close();

@@ -1,12 +1,27 @@
 package pojo;
 
+import java.math.BigDecimal;
+import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
+import java.util.Date;
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name="TemptrnHeader_table")
+@Table(name="temporary_transaction_headers")
 public class TempTrnHeaders {
 
 	@Override
@@ -31,65 +46,72 @@ public class TempTrnHeaders {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
-	public String getTransaction_no() {
+	public int getTransaction_no() {
 		return transaction_no;
 	}
-	public void setTransaction_no(String transaction_no) {
+	public void setTransaction_no(int transaction_no) {
 		this.transaction_no = transaction_no;
 	}
-	public String getReceipt_no() {
+	public int getReceipt_no() {
 		return receipt_no;
 	}
-	public void setReceipt_no(String receipt_no) {
+	public void setReceipt_no(int receipt_no) {
 		this.receipt_no = receipt_no;
 	}
-	public String getStore_no() {
+	public int getStore_no() {
 		return store_no;
 	}
-	public void setStore_no(String store_no) {
+	public void setStore_no(int store_no) {
 		this.store_no = store_no;
 	}
-	public String getPos_terminal_no() {
+	public int getPos_terminal_no() {
 		return pos_terminal_no;
 	}
-	public void setPos_terminal_no(String pos_terminal_no) {
+	public void setPos_terminal_no(int pos_terminal_no) {
 		this.pos_terminal_no = pos_terminal_no;
 	}
-	public String getStaff_id() {
+	public int getStaff_id() {
 		return staff_id;
 	}
-	public void setStaff_id(String staff_id) {
+	public void setStaff_id(int staff_id) {
 		this.staff_id = staff_id;
 	}
-	public String getTransaction_date() {
+	public LocalDateTime getTransaction_date() {
 		return transaction_date;
 	}
-	public void setTransaction_date(String transaction_date) {
+	public void setTransaction_date(LocalDateTime transaction_date) {
 		this.transaction_date = transaction_date;
 	}
-	public String getOriginal_date() {
+	public LocalDateTime getOriginal_date() {
 		return original_date;
 	}
-	public void setOriginal_date(String original_date) {
+	public void setOriginal_date(LocalDateTime original_date) {
 		this.original_date = original_date;
 	}
-	public String getTransaction_time() {
+	public LocalTime getTransaction_time() {
 		return transaction_time;
 	}
-	public void setTransaction_time(String transaction_time) {
-		this.transaction_time = transaction_time;
+//	public void setTransaction_time(Time transaction_time) {
+//		 if (transaction_time != null) {
+//		        this.transaction_time = transaction_time ;
+////		this.transaction_time = transaction_time;
+//	}
+	public void setTransaction_time(LocalTime transaction_time) {
+	    if (transaction_time != null) {
+	        this.transaction_time = transaction_time;
+	    }
 	}
 	public String getCustomer_no() {
 		return customer_no;
@@ -97,52 +119,52 @@ public class TempTrnHeaders {
 	public void setCustomer_no(String customer_no) {
 		this.customer_no = customer_no;
 	}
-	public String getNet_amount() {
+	public int getNet_amount() {
 		return net_amount;
 	}
-	public void setNet_amount(String net_amount) {
+	public void setNet_amount(int net_amount) {
 		this.net_amount = net_amount;
 	}
-	public String getGross_amount() {
+	public int getGross_amount() {
 		return gross_amount;
 	}
-	public void setGross_amount(String gross_amount) {
+	public void setGross_amount(int gross_amount) {
 		this.gross_amount = gross_amount;
 	}
-	public String getPayment() {
+	public int getPayment() {
 		return payment;
 	}
-	public void setPayment(String payment) {
+	public void setPayment(int payment) {
 		this.payment = payment;
 	}
-	public String getDiscounts() {
+	public int getDiscounts() {
 		return discounts;
 	}
-	public void setDiscounts(String discounts) {
+	public void setDiscounts(int discounts) {
 		this.discounts = discounts;
 	}
-	public String getTotal_quantity() {
+	public int getTotal_quantity() {
 		return total_quantity;
 	}
-	public void setTotal_quantity(String total_quantity) {
+	public void setTotal_quantity(int total_quantity) {
 		this.total_quantity = total_quantity;
 	}
-	public String getEntry_status() {
+	public int getEntry_status() {
 		return entry_status;
 	}
-	public void setEntry_status(String entry_status) {
+	public void setEntry_status(int entry_status) {
 		this.entry_status = entry_status;
 	}
-	public String getNo_of_item_lines() {
+	public int getNo_of_item_lines() {
 		return no_of_item_lines;
 	}
-	public void setNo_of_item_lines(String no_of_item_lines) {
+	public void setNo_of_item_lines(int no_of_item_lines) {
 		this.no_of_item_lines = no_of_item_lines;
 	}
-	public String getNo_of_payment_lines() {
+	public int getNo_of_payment_lines() {
 		return no_of_payment_lines;
 	}
-	public void setNo_of_payment_lines(String no_of_payment_lines) {
+	public void setNo_of_payment_lines(int no_of_payment_lines) {
 		this.no_of_payment_lines = no_of_payment_lines;
 	}
 	public String getTable_no() {
@@ -220,11 +242,11 @@ public class TempTrnHeaders {
 	
 	
 	
-	public TempTrnHeaders(int id, String created_at, String updated_at, String transaction_no, String receipt_no,
-			String store_no, String pos_terminal_no, String staff_id, String transaction_date, String original_date,
-			String transaction_time, String customer_no, String net_amount, String gross_amount, String payment,
-			String discounts, String total_quantity, String entry_status, String no_of_item_lines,
-			String no_of_payment_lines, String table_no, String table_capacity, String no_of_covers,
+	public TempTrnHeaders(int id, LocalDateTime created_at, LocalDateTime updated_at, int transaction_no, int receipt_no,
+			int store_no, int pos_terminal_no, int staff_id, LocalDateTime transaction_date, LocalDateTime original_date,
+			LocalTime transaction_time, String customer_no, int net_amount, int gross_amount, int payment,
+			int discounts, int total_quantity, int entry_status, int no_of_item_lines,
+			int no_of_payment_lines, String table_no, String table_capacity, String no_of_covers,
 			String active_table_no, String table_group, String kitchen_status, String order_no,
 			String order_current_status, String order_delivery_id, String vat_amount, String zreport_id,
 			String variant_code) {
@@ -265,101 +287,138 @@ public class TempTrnHeaders {
 
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id")
-	int id;
+	private int id;
 	
-	@Column(name="CreatedAt")
-	String created_at;
+
+
+	@CreationTimestamp
+	@Column(name="created_at")
+	private LocalDateTime created_at;
 	
-	@Column(name="UpdatedAt")
-	String updated_at;
+	@CreationTimestamp
+	@Column(name="updated_at")
+	private LocalDateTime updated_at;
 	
-	@Column(name="TransactionNo")
-	String transaction_no;
+	@Column(name="transaction_no")
+	int transaction_no;
 	
-	@Column(name="ReceiptNO")
-	String receipt_no;
+
 	
-	@Column(name="StoreNo")
-	String store_no;
 	
-	@Column(name="PosTerminalNo")
-	String pos_terminal_no;
+	@Column(name="receipt_no")
+	private int receipt_no;
+
 	
-	@Column(name="StaffId")
-	String staff_id;
 	
-	@Column(name="TransactionDate")
-	String transaction_date;
+	@Column(name="store_no")
+	private int store_no;
 	
-	@Column(name="OriginalDate")
-    String original_date;
+
+	@Column(name="pos_terminal_no")
+	private int pos_terminal_no;
 	
-	@Column(name="TransactionTime")
-    String transaction_time;
 	
-	@Column(name="CustomerNO")
+	@Column(name="staff_id")
+	private int staff_id;
+	
+
+	@CreationTimestamp
+	@Column(name="transaction_date")
+	private LocalDateTime transaction_date;
+	
+
+	@CreationTimestamp
+	@Column(name="original_date")
+    private LocalDateTime original_date;
+	
+
+	@CreationTimestamp
+	@Column(name="transaction_time")
+	private LocalTime transaction_time;
+	
+ 
+	@Column(name="customer_no")
     String customer_no;
 	
-	@Column(name="NetAmount")
-    String net_amount;
 	
-	@Column(name="GrossAmount")
-    String gross_amount;
+	@Column(name="net_amount")
+	 int net_amount;
+	
+	
+	@Column(name="gross_amount")
+	 int gross_amount;
+	
 	
 	@Column(name="Payment")
-    String payment;
+	 int payment;
+	
 	
 	@Column(name="Discounts")
-    String discounts;
+	 int discounts;
 	
-	@Column(name="TotalQuantity")
-    String total_quantity;
 	
-	@Column(name="EntryStatus")
-    String entry_status;
+	@Column(name="total_quantity")
+	private int total_quantity;
+
+	@Column(name="entry_status")
+     int entry_status;
 	
-	@Column(name="NoOfItemlines")
-    String no_of_item_lines;
 	
-	@Column(name="noofpaymentLines")
-    String no_of_payment_lines;
+	@Column(name="no_of_item_lines")
+	int no_of_item_lines;
 	
-	@Column(name="tableNo")
-    String table_no;
 	
-	@Column(name="TableCapacity")
-    String table_capacity;
+	@Column(name="no_of_payment_lines")
+	 int no_of_payment_lines;
 	
-	@Column(name="NoofCovers")
-    String no_of_covers;
+
+	@Column(name="table_no")
+	 String table_no;
 	
-	@Column(name="ActivetableNO")
-    String active_table_no;
 	
-	@Column(name="TableGroup")
-    String table_group;
+	@Column(name="table_capacity")
+	 String table_capacity;
 	
-	@Column(name="KitchenStatus")
-    String kitchen_status;
 	
-	@Column(name="orderNO")
-    String order_no;
+	@Column(name="no_of_covers")
+	 String no_of_covers;
 	
-	@Column(name="OrderCurrentStatus")
-    String order_current_status;
 	
-	@Column(name="OrderDeliveryId")
-    String order_delivery_id;
+	@Column(name="active_table_no")
+	 String active_table_no;
 	
-	@Column(name="VatAmount")
-    String vat_amount;
+
+	@Column(name="table_group")
+	 String table_group;
 	
-	@Column(name="ZreportId")
-    String zreport_id;
 	
-	@Column(name="VariantCode")
-    String variant_code;
+	@Column(name="kitchen_status")
+	 String kitchen_status;
+	
+	
+	@Column(name="order_no")
+	 String order_no;
+	
+	
+	@Column(name="order_current_status")
+	 String order_current_status;
+	
+
+	@Column(name="order_delivery_id")
+	String order_delivery_id;
+	
+	
+	@Column(name="vat_amount")
+	String vat_amount;
+
+	@Column(name="zreport_id")
+	 String zreport_id;
+	
+	
+	@Column(name="variant_code")
+	String variant_code;
    
 	
 	

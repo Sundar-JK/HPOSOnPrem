@@ -1,5 +1,6 @@
 package pojo;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class OrderHeader {
@@ -30,17 +31,17 @@ public class OrderHeader {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
-		this.created_at = created_at;
+	public void setCreated_at(LocalDateTime localDateTime) {
+		this.created_at = localDateTime;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
-		this.updated_at = updated_at;
+	public void setUpdated_at(LocalDateTime localDateTime) {
+		this.updated_at = localDateTime;
 	}
 	public String getTransaction_no() {
 		return transaction_no;
@@ -48,10 +49,10 @@ public class OrderHeader {
 	public void setTransaction_no(String transaction_no) {
 		this.transaction_no = transaction_no;
 	}
-	public String getReceipt_no() {
+	public int getReceipt_no() {
 		return receipt_no;
 	}
-	public void setReceipt_no(String receipt_no) {
+	public void setReceipt_no(int receipt_no) {
 		this.receipt_no = receipt_no;
 	}
 	public String getLine_no() {
@@ -96,46 +97,46 @@ public class OrderHeader {
 	public void setPos_terminal_no(String pos_terminal_no) {
 		this.pos_terminal_no = pos_terminal_no;
 	}
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity ) {
 		this.quantity = quantity;
 	}
-	public String getVat_percent() {
+	public int getVat_percent() {
 		return vat_percent;
 	}
-	public void setVat_percent(String vat_percent) {
+	public void setVat_percent(int vat_percent) {
 		this.vat_percent = vat_percent;
 	}
-	public String getDiscount_percent() {
+	public int getDiscount_percent() {
 		return discount_percent;
 	}
-	public void setDiscount_percent(String discount_percent) {
+	public void setDiscount_percent(int discount_percent) {
 		this.discount_percent = discount_percent;
 	}
-	public String getDiscount_amount() {
+	public int getDiscount_amount() {
 		return discount_amount;
 	}
-	public void setDiscount_amount(String discount_amount) {
+	public void setDiscount_amount(int discount_amount) {
 		this.discount_amount = discount_amount;
 	}
-	public String getNet_amount() {
+	public int getNet_amount() {
 		return net_amount;
 	}
-	public void setNet_amount(String net_amount) {
+	public void setNet_amount(int net_amount) {
 		this.net_amount = net_amount;
 	}
-	public String getVat_amount() {
+	public int getVat_amount() {
 		return vat_amount;
 	}
-	public void setVat_amount(String vat_amount) {
+	public void setVat_amount(int vat_amount) {
 		this.vat_amount = vat_amount;
 	}
-	public String getAmount() {
+	public int getAmount() {
 		return amount;
 	}
-	public void setAmount(String amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 	public String getAdditional_info_exist() {
@@ -234,10 +235,10 @@ public class OrderHeader {
 	public void setTax_amount(String tax_amount) {
 		this.tax_amount = tax_amount;
 	}
-	public String getPrice_includes_tax() {
+	public boolean getPrice_includes_tax() {
 		return price_includes_tax;
 	}
-	public void setPrice_includes_tax(String price_includes_tax) {
+	public void setPrice_includes_tax(boolean price_includes_tax) {
 		this.price_includes_tax = price_includes_tax;
 	}
 	public String getKot_ref_id() {
@@ -285,14 +286,14 @@ public class OrderHeader {
 	
 	
 
-	public OrderHeader(int id, String created_at, String updated_at, String transaction_no, String receipt_no,
+	public OrderHeader(int id, LocalDateTime created_at, LocalDateTime updated_at, String transaction_no, int receipt_no,
 			String line_no, String product_code, String entry_status, String description, String uom, String store_no,
-			String pos_terminal_no, String quantity, String vat_percent, String discount_percent,
-			String discount_amount, String net_amount, String vat_amount, String amount, String additional_info_exist,
+			String pos_terminal_no, int quantity, int vat_percent, int discount_percent,
+			int discount_amount, int net_amount, int vat_amount, int amount, String additional_info_exist,
 			String sales_type, String line_current_status, String additional_charge_lines_exist, String sales_staff,
 			String coverid, String parent_item_no, String hierarchy, String parent_order_ref_no, String vat_code,
 			String vat_percentage, String unit_price_amount, String unit_price_without_tax, String gross_amount,
-			String amount_without_tax, String tax_amount, String price_includes_tax, String kot_ref_id,
+			String amount_without_tax, String tax_amount, boolean price_includes_tax, String kot_ref_id,
 			String deal_name, String deal_trn_link, String variant_code, List<AddItems> additems,
 			List<RemoveItems> removeitems, List<AddOns> addons) {
 		super();
@@ -343,10 +344,10 @@ public class OrderHeader {
 
 
 	int id;
-	String created_at;
-	String updated_at;
+	LocalDateTime created_at;
+	LocalDateTime updated_at;
 	String transaction_no;
-	String receipt_no;
+	int receipt_no;
 	String line_no;
 	String product_code;
 	String entry_status;
@@ -354,13 +355,13 @@ public class OrderHeader {
 	String uom;
 	String store_no;
 	String pos_terminal_no;
-	String quantity;
-	String vat_percent;
-	String discount_percent;
-	String discount_amount;
-	String net_amount;
-	String vat_amount;
-	String amount;
+	int quantity;
+	int vat_percent;
+	int discount_percent;
+	int discount_amount;
+	int net_amount;
+	int vat_amount;
+	int amount;
 	String additional_info_exist;
 	String sales_type;
 	String line_current_status;
@@ -377,7 +378,7 @@ public class OrderHeader {
 	String gross_amount;
 	String amount_without_tax;
 	String tax_amount;
-	String price_includes_tax;
+	boolean price_includes_tax;
 	String kot_ref_id;
 	String deal_name;
 	String deal_trn_link;

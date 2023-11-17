@@ -3,6 +3,8 @@ package com;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -19,4 +21,12 @@ public class ServletReplacemnt {
 		return irvr;
 		
 	}
+	
+	
+	 @Bean
+	    public LocalSessionFactoryBean sessionFactory() {
+	        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+	        sessionFactory.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
+	        return sessionFactory;
+	    }
 }

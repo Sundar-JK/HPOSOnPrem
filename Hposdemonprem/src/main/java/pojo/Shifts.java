@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "shifts_table")
+@Table(name = "shift")
 public class Shifts {
 
 	@Override

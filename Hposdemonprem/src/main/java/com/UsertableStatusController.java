@@ -30,4 +30,4 @@ public class UsertableStatusController {
 	     sessionFactory.close();
 	     return UsertablestatusessList;
 	}
-}
+} 

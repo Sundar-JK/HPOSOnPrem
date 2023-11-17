@@ -14,7 +14,7 @@ import pojo.UserTableLink;
 @RestController
 public class UserTableLinkController {
 
-	@GetMapping("/UserTableLinks")
+	@GetMapping("/UTL")
 	public static List<UserTableLink> getUser() {
 		Configuration cfg =new Configuration();
 		cfg.configure("hibernate.cfg.xml");

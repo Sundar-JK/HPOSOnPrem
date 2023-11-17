@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "menihierarchies_table")
+@Table(name = "menuhierarchies")
 public class Menuhierarchiess {
 
 	@Override
@@ -89,28 +89,28 @@ public class Menuhierarchiess {
 	@Column(name="Id")
 	int id;
 	
-	@Column(name="createdAt")
+	@Column(name="created_at")
 	String created_at;
 	
-	@Column(name="updatedAt")
+	@Column(name="updated_at")
 	String updated_at;
 	
-	@Column(name="hierarchyLabel")
+	@Column(name="hierarchy_label")
 	String hierarchy_label;
 	
-	@Column(name="hierarchyCode")
+	@Column(name="hierarchy_code")
 	String hierarchy_code;
 	
-	@Column(name="parentId")
+	@Column(name="parent_id")
 	String parent_id;
 	
-	@Column(name="IsActive")
+	@Column(name="is_active")
 	String is_active;
 	
-	@Column(name="SectionCode")
+	@Column(name="section_Code")
 	String section_code;
 	
-	@Column(name="SectionName")
+	@Column(name="section_name")
 	String section_name;
 
 	public Menuhierarchiess() {}

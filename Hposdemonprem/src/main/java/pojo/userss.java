@@ -2,6 +2,8 @@ package pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 @Entity
@@ -11,7 +13,7 @@ public class userss {
 	@Override
 	public String toString() {
 		return "users [id=" + id + ", name=" + name + ", email=" + email + ", role=" + role + ", shift_id=" + shift_id
-				+ ", branch_id=" + branch_id + "]";
+				+ ", branch_id=" + branch_id + ",]";
 	}
 	public int getId() {
 		return id;
@@ -49,6 +51,8 @@ public class userss {
 	public void setBranch_id(String branch_id) {
 		this.branch_id = branch_id;
 	}
+	
+
 	public userss(int id, String name, String email, String role, String shift_id, String branch_id) {
 		super();
 		this.id = id;
@@ -57,10 +61,12 @@ public class userss {
 		this.role = role;
 		this.shift_id = shift_id;
 		this.branch_id = branch_id;
+	
 	}
 	@Id
-	@Column(name="id")
-	int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="Id")
+	private int id;
 	
 	@Column(name="name")
 	String name;
@@ -71,10 +77,14 @@ public class userss {
 	@Column(name="role")
 	String role;
 	
-	@Column(name="shiftId")
+	@Column(name="shift_id")
 	String shift_id;
-	@Column(name="branchId")
+	
+	@Column(name="branch_id")
 	String branch_id;
+	
+	
+	
 public userss() {}
 
 }

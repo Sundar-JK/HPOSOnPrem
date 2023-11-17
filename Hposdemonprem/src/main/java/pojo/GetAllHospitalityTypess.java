@@ -1,12 +1,18 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="getAllHospitalitytypes_table")
+@Table(name="hospitalitytypes")
 public class GetAllHospitalityTypess {
 
 	@Override
@@ -23,16 +29,16 @@ public class GetAllHospitalityTypess {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 	public String getCode() {
@@ -67,7 +73,7 @@ public class GetAllHospitalityTypess {
 	}
 	
 	
-	public GetAllHospitalityTypess(int id, String created_at, String updated_at, String code, String description,
+	public GetAllHospitalityTypess(int id, LocalDateTime created_at, LocalDateTime updated_at, String code, String description,
 			String store_code, String layout_view, String is_active) {
 		super();
 		this.id = id;
@@ -81,28 +87,31 @@ public class GetAllHospitalityTypess {
 	}
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id")
-	int id;
+	private int id;
 	
-	@Column(name="CreatedAt")
-	String created_at;
+	@CreationTimestamp
+	@Column(name="created_at")
+	private LocalDateTime created_at;
 	
-	@Column(name="UpdatedAt")
-	String updated_at;
+	@CreationTimestamp
+	@Column(name="updated_at")
+	private LocalDateTime updated_at;;
 	
-	@Column(name="Code")
+	@Column(name="code")
 	String code;
 	
-	@Column(name="Description")
+	@Column(name="description")
 	String description;
 	
-	@Column(name="Storecode")
+	@Column(name="store_code")
 	String store_code;
 	
-	@Column(name="LayoutView")
+	@Column(name="layout_view")
 	String layout_view;
 	
-	@Column(name="IsActive")
+	@Column(name="is_active")
 	String is_active;
 	
 	public GetAllHospitalityTypess() {}

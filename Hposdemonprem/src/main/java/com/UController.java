@@ -8,10 +8,13 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pojo.Guimenus;
+
 import pojo.userss;
+
 @RestController
 public class UController {
-	@GetMapping("/userss")
+	@GetMapping("/users")
 	public static List<userss> getUser() {
 		Configuration cfg =new Configuration();
 		cfg.configure("hibernate.cfg.xml");

@@ -1,12 +1,18 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "usertablestatusess_table")
+@Table(name = "usertablestatuses")
 public class Usertablestatusess {
 
 	@Override
@@ -21,16 +27,16 @@ public class Usertablestatusess {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 	public String getUserid() {
@@ -64,7 +70,7 @@ public class Usertablestatusess {
 		this.createdby = createdby;
 	}
 	
-	public Usertablestatusess(int id, String created_at, String updated_at, String userid, String status,
+	public Usertablestatusess(int id, LocalDateTime created_at, LocalDateTime updated_at, String userid, String status,
 			String nextstatus, String isactive, String createdby) {
 		super();
 		this.id = id;
@@ -78,14 +84,17 @@ public class Usertablestatusess {
 	}
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id")
-	int id;
+	private int id;
 	
+	@CreationTimestamp
 	@Column(name="createdAt")
-	String created_at;
+	private LocalDateTime created_at;
 	
+	@CreationTimestamp
 	@Column(name="updatedAt")
-	String updated_at;
+	private LocalDateTime updated_at;
 	
 	@Column(name="userId")
 	String userid;

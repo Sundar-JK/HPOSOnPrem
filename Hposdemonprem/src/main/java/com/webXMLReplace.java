@@ -19,4 +19,5 @@ public class webXMLReplace extends AbstractAnnotationConfigDispatcherServletInit
 		String[] urlMappings= {"/apnt/*"};
 		return urlMappings;
 	}
+	
 }

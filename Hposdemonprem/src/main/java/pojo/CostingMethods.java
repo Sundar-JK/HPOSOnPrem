@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "costingmethods_table")
+@Table(name = "costing_methods")
 public class CostingMethods {
 
 	@Override

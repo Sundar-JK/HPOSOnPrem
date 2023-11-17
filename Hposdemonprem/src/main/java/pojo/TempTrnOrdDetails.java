@@ -1,12 +1,18 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name="tempTrnOrdDetail_table")
+@Entity 
+@Table(name="temporary_order_details")
 public class TempTrnOrdDetails {
 
 
@@ -43,16 +49,16 @@ public class TempTrnOrdDetails {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 	public String getTransaction_no() {
@@ -109,46 +115,46 @@ public class TempTrnOrdDetails {
 	public void setPos_terminal_no(String pos_terminal_no) {
 		this.pos_terminal_no = pos_terminal_no;
 	}
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public String getVat_percent() {
+	public int getVat_percent() {
 		return vat_percent;
 	}
-	public void setVat_percent(String vat_percent) {
+	public void setVat_percent(int vat_percent) {
 		this.vat_percent = vat_percent;
 	}
-	public String getDiscount_percent() {
+	public int getDiscount_percent() {
 		return discount_percent;
 	}
-	public void setDiscount_percent(String discount_percent) {
+	public void setDiscount_percent(int discount_percent) {
 		this.discount_percent = discount_percent;
 	}
-	public String getDiscount_amount() {
+	public int getDiscount_amount() {
 		return discount_amount;
 	}
-	public void setDiscount_amount(String discount_amount) {
+	public void setDiscount_amount(int discount_amount) {
 		this.discount_amount = discount_amount;
 	}
-	public String getNet_amount() {
+	public int getNet_amount() {
 		return net_amount;
 	}
-	public void setNet_amount(String net_amount) {
+	public void setNet_amount(int net_amount) {
 		this.net_amount = net_amount;
 	}
-	public String getVat_amount() {
+	public int getVat_amount() {
 		return vat_amount;
 	}
-	public void setVat_amount(String vat_amount) {
+	public void setVat_amount(int vat_amount) {
 		this.vat_amount = vat_amount;
 	}
-	public String getAmount() {
+	public int getAmount() {
 		return amount;
 	}
-	public void setAmount(String amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 	public String getAdditional_info_exist() {
@@ -202,10 +208,10 @@ public class TempTrnOrdDetails {
 	
 	
 	
-	public TempTrnOrdDetails(int id, String created_at, String updated_at, String transaction_no, String receipt_no,
+	public TempTrnOrdDetails(int id, LocalDateTime created_at, LocalDateTime updated_at, String transaction_no, String receipt_no,
 			String line_no, String product_code, String entry_status, String description, String uom, String store_no,
-			String pos_terminal_no, String quantity, String vat_percent, String discount_percent,
-			String discount_amount, String net_amount, String vat_amount, String amount, String additional_info_exist,
+			String pos_terminal_no, int quantity, int vat_percent, int discount_percent,
+			int discount_amount, int net_amount, int vat_amount, int amount, String additional_info_exist,
 			String sales_type, String line_is_excluded, String additional_charge_lines_exist, String sales_staff,
 			String coverid, String parent_item_no, String parent_order_ref_no) {
 		super();
@@ -238,85 +244,88 @@ public class TempTrnOrdDetails {
 		this.parent_order_ref_no = parent_order_ref_no;
 	}
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id")
-	int id;
+	 int id;
 	
-	@Column(name="CreatedAt")
-	String created_at;
+	@CreationTimestamp
+	@Column(name="created_at")
+	private LocalDateTime created_at;
 	
-	@Column(name="UpdatedAt")
-	String updated_at;
+	@CreationTimestamp
+	@Column(name="updated_at")
+	private LocalDateTime updated_at;
 	
-	@Column(name="TransactionNo")
+	@Column(name="transaction_no")
 	String transaction_no;
 	
-	@Column(name="ReceiptNo")
+	@Column(name="receipt_no")
 	String receipt_no;
 	
-	@Column(name="LineNo")
+	@Column(name="line_no")
 	String line_no;
 	
-	@Column(name="Productcode")
+	@Column(name="product_code")
 	String product_code;
 	
-	@Column(name="EntryStatus")
+	@Column(name="entry_status")
 	String entry_status;
 	
-	@Column(name="Description")
+	@Column(name="description")
 	String description;
 	
-	@Column(name="Uom")
+	@Column(name="uom")
 	String uom;
 	
-	@Column(name="StoreNo")
+	@Column(name="store_no")
 	String store_no;
 	
-	@Column(name="PosTerminalNo")
+	@Column(name="pos_terminal_no")
 	String pos_terminal_no;
 	
-	@Column(name="Quantity")
-	String quantity;
+	@Column(name="quantity")
+	 int quantity;
 	
-	@Column(name="VatPercent")
-	String vat_percent;
+	@Column(name="vat_percent")
+	 int vat_percent;
 	
-	@Column(name="Discountpercent")
-	String discount_percent;
+	@Column(name="discount_percent")
+	 int discount_percent;
 	
-	@Column(name="DiscountAmount")
-	String discount_amount;
+	@Column(name="discount_amount")
+	 int discount_amount;
 	
-	@Column(name="netAmount")
-	String net_amount;
+	@Column(name="net_amount")
+	 int net_amount;
 	
-	@Column(name="VatAmount")
-	String vat_amount;
+	@Column(name="vat_amount")
+	 int vat_amount;
 	
-	@Column(name="Amount")
-	String amount;
+	@Column(name="amount")
+	 int amount;
 	
-	@Column(name="AdditionalInfoExists")
+	@Column(name="additional_info_exist")
 	String additional_info_exist;
 	
-	@Column(name="SalesTypes")
+	@Column(name="sales_type")
 	String sales_type;
 	
-	@Column(name="LineIsExcluded")
+	@Column(name="line_is_excluded")
 	String line_is_excluded;
 	
-	@Column(name="AdditionalChargeLineExists")
+	@Column(name="additional_charge_lines_exist")
 	String additional_charge_lines_exist;
 	
-	@Column(name="SalesStaff")
+	@Column(name="sales_staff")
 	String sales_staff;
 	
-	@Column(name="CoverID")
+	@Column(name="coverid")
 	String coverid;
 	
-	@Column(name="ParentItemno")
+	@Column(name="parent_item_no")
 	String parent_item_no;
 	
-	@Column(name="PArentOrederRefNO")
+	@Column(name="parent_order_ref_no")
 	String parent_order_ref_no;
 	
 	

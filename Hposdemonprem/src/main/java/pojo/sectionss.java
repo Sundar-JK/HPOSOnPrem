@@ -1,7 +1,13 @@
 package pojo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -25,16 +31,16 @@ public class sectionss {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
-	public String getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 	public String getCode() {
@@ -68,7 +74,7 @@ public class sectionss {
 		this.is_active = is_active;
 	}
 	
-	public sectionss(int id, String created_at, String updated_at, String code, String description,
+	public sectionss(int id, LocalDateTime created_at, LocalDateTime updated_at, String code, String description,
 			String hospitality_type, String store_code, String is_active) {
 		super();
 		this.id = id;
@@ -82,12 +88,20 @@ public class sectionss {
 	}
 	
 	@Id
-	@Column(name="id")
-	int id;
-	@Column(name="createdAt")
-	String created_at;
-	@Column(name="updatedAt")
-	String updated_at;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="Id")
+	private int id;
+	
+	
+	@CreationTimestamp
+	@Column(name="created_at")
+	private LocalDateTime created_at;
+	
+	
+	@CreationTimestamp
+	@Column(name="updated_at")
+	private LocalDateTime updated_at;
+	
 	@Column(name="code")
 	String code;
 	@Column(name="description")

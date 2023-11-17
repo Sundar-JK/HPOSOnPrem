@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "vatmasters_table")
+@Table(name = "vat_masters")
 public class Vatmasters {
 
 
@@ -80,22 +80,22 @@ public class Vatmasters {
 	@Column(name="id")
 	int id;
 	
-	@Column(name="createdat")
+	@Column(name="created_at")
 	String created_at;
 	
-	@Column(name="updatedat")
+	@Column(name="updated_at")
 	String updated_at;
 	
-	@Column(name="vatcode")
+	@Column(name="vat_code")
 	String vat_code;
 	
-	@Column(name="vatpercent")
+	@Column(name="vat_percent")
 	String vat_percent;
 	
-	@Column(name="startdate")
+	@Column(name="start_date")
 	String start_date;
 	
-	@Column(name="enddate")
+	@Column(name="end_date")
 	String end_date;
 	
 	@Column(name="description")

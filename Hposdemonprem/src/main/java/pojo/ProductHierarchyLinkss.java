@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "producthierarchy_table")
+@Table(name = "product_hierarchy_links")
 public class ProductHierarchyLinkss {
 
 	@Override
@@ -60,16 +60,16 @@ public class ProductHierarchyLinkss {
 	@Id
 	@Column(name="Id")
 	int id;
-	@Column(name="CreatedAt")
+	@Column(name="created_at")
 	String created_at;
 	
-	@Column(name="updatedAt")
+	@Column(name="updated_at")
 	String updated_at;
 	
-	@Column(name="productId")
+	@Column(name="product_id")
 	String product_id;
 	
-	@Column(name="HierarchyId")
+	@Column(name="hierarchy_id")
 	String hierarchy_id;
 	
 	public ProductHierarchyLinkss() {}

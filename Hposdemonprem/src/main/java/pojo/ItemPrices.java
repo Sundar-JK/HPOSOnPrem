@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "itempricess_table")
+@Table(name = "item_prices")
 public class ItemPrices {
 
 	@Override
@@ -149,48 +149,48 @@ public class ItemPrices {
 	@Column(name="Id")
 	int id;
 	
-	@Column(name="createdAt")
+	@Column(name="created_at")
 	String created_at;
 	
-	@Column(name="updatedAt")
+	@Column(name="updated_at")
 	String updated_at;
 	
-	@Column(name="itemNo")
+	@Column(name="item_no")
 	String item_no;
 	
-	@Column(name="storeCode")
+	@Column(name="store_code")
 	String store_code;
 	
-	@Column(name="unitPrice")
+	@Column(name="unit_price")
 	String unit_price;
 	
-	@Column(name="unitPriceinclvat")
+	@Column(name="unit_price_incl_vat")
 	String unit_price_incl_vat;
 	
-	@Column(name="startDate")
+	@Column(name="start_date")
 	String start_date;
 	
-	@Column(name="endDate")
+	@Column(name="end_date")
 	String end_date;
-	@Column(name="Uom")
+	@Column(name="uom")
 	String uom;
-	@Column(name="VatCode")
+	@Column(name="vat_code")
 	String vat_code;
 	
-	@Column(name="locationCode")
+	@Column(name="location_code")
 	String location_code;
 	
-	@Column(name="varaintCode")
+	@Column(name="variant_code")
 	String variant_code;
-	@Column(name="CurrencyCode")
+	@Column(name="currency_code")
 	String currency_code;
 	
-	@Column(name="startTime")
+	@Column(name="start_time")
 	String start_time;
-	@Column(name="endTime")
+	@Column(name="end_time")
 	String end_time;
 	
-	@Column(name="ItemPrice")
+	@Column(name="item_price")
 	String item_price;
 	
 public ItemPrices() {}
