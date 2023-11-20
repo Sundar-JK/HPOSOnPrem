@@ -2,6 +2,8 @@ package pojo;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Branch {
 
     @Override
@@ -138,7 +140,9 @@ public class Branch {
 		this.profile_code = profile_code;
 	}
 		int id;
+		@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	     LocalDateTime created_at;
+		@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	     LocalDateTime updated_at;
 	     String no;
 	     String name;

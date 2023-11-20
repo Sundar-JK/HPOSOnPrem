@@ -34,7 +34,6 @@ public class temporary_transaction_Controller {
 	 @RequestMapping(path = "/temptrnordhdr/tableOrdHdr/{id}", method = RequestMethod.GET)
 	   public List<OrderHeader> getTempTrn(@PathVariable String id) {
 		 Scanner sc = new Scanner(System.in);
-		 List <OrderHeader> orderHdr = new ArrayList();
 	        Configuration cfg = new Configuration();
 	        cfg.configure("hibernate.cfg.xml");
 	        cfg.addAnnotatedClass(TempTrnHeaders.class);
@@ -48,9 +47,9 @@ public class temporary_transaction_Controller {
 	        System.out.println("sessionFactory done");
 
 	        Transaction transaction = session.beginTransaction();
+	        List <OrderHeader> orderHdr = new ArrayList();
 	        try {
 	        	 System.out.println("Enter Id");
-	        	
 	        	 String no=id;
 	        	 String hqlQuery = "FROM TempTrnHeaders where id = :HId";
 	        	 List<TempTrnHeaders> HeaderResults = session.createQuery(hqlQuery)
@@ -281,26 +280,27 @@ public class temporary_transaction_Controller {
 			    	    		 OrdInfo.setAddons(AddOnsList1);
 			    	    		 AddOnsList1= new ArrayList<>();
 			    	    		 orderHdr.add(OrdInfo);
-			    	    		 
 	    	    	 }
-	    		 
 	    	 }
-	    	    	for (OrderHeader ordInfo : orderHdr) {
-	    	    	    Gson gson = new Gson();
-	    	    	    String OrderInfojson = gson.toJson(ordInfo);
-	    	    	    System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(ordInfo));
-	    	    	   
-	    	    	}
-	    	    	
+	    	   
+             System.out.println(orderHdr);
+//	    	    	for (OrderHeader ordInfo : orderHdr) {
+//	    	    		
+////	    	    	    Gson gson = new Gson();
+////	    	    	    String OrderInfojson = gson.toJson(ordInfo);
+////	    	    	    System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(ordInfo));
+//	    	    	    System.out.println(ordInfo);
+//	    	    	}
 	        }
 	    	     
 	    	     }
 	        
 	    	     finally {
 	    	    	 session.close();
-		    	     sessionFactory.close();		    	     
+		    	     sessionFactory.close();
 	    	     }
-			return orderHdr;   
+			return orderHdr;
+	
 	 }	
 	       
 }

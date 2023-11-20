@@ -19,7 +19,7 @@ import pojo.RemoveItems;
 import pojo.TempTrnHeaders;
 import pojo.TempTrnOrdDetails;
 import pojo.TempTrnOrdHeaders;
-
+import org.hibernate.annotations.Type;
 public class temptrnmaincode {
 
 	public static void main(String[] args) {
@@ -271,11 +271,15 @@ public class temptrnmaincode {
 			    	    		 orderHdr.add(OrdInfo);
 	    	    	 }
    	    	 }
-	    	    	for (OrderHeader ordInfo : orderHdr) {
-	    	    	    Gson gson = new Gson();
-//	    	    	    String OrderInfojson = gson.toJson(ordInfo);
-	    	    	    System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(ordInfo));
-	    	    	}
+	    	   
+                System.out.println(orderHdr);
+//	    	    	for (OrderHeader ordInfo : orderHdr) {
+//	    	    		
+////	    	    	    Gson gson = new Gson();
+////	    	    	    String OrderInfojson = gson.toJson(ordInfo);
+////	    	    	    System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(ordInfo));
+//	    	    	    System.out.println(ordInfo);
+//	    	    	}
 	        }
 	    	     
 	    	     }

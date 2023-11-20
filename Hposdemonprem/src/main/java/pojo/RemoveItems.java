@@ -2,6 +2,8 @@ package pojo;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class RemoveItems {
 
 	@Override
@@ -217,7 +219,10 @@ public class RemoveItems {
 	}
 
 	int id;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime created_at;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime updated_at;
 	String transaction_no;
 	String receipt_no;

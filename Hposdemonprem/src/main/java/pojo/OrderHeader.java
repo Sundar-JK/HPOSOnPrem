@@ -3,6 +3,8 @@ package pojo;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class OrderHeader {
 
 
@@ -344,7 +346,9 @@ public class OrderHeader {
 
 
 	int id;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime created_at;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime updated_at;
 	String transaction_no;
 	int receipt_no;

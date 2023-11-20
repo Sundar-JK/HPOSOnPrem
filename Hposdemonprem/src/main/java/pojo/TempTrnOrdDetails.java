@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -250,11 +252,13 @@ public class TempTrnOrdDetails {
 	
 	@CreationTimestamp
 	@Column(name="created_at")
-	private LocalDateTime created_at;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 LocalDateTime created_at;
 	
 	@CreationTimestamp
 	@Column(name="updated_at")
-	private LocalDateTime updated_at;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 LocalDateTime updated_at;
 	
 	@Column(name="transaction_no")
 	String transaction_no;

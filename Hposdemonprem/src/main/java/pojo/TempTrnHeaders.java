@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Date;
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -295,11 +296,13 @@ public class TempTrnHeaders {
 
 	@CreationTimestamp
 	@Column(name="created_at")
-	private LocalDateTime created_at;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 LocalDateTime created_at;
 	
 	@CreationTimestamp
 	@Column(name="updated_at")
-	private LocalDateTime updated_at;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 LocalDateTime updated_at;
 	
 	@Column(name="transaction_no")
 	int transaction_no;
@@ -326,17 +329,19 @@ public class TempTrnHeaders {
 
 	@CreationTimestamp
 	@Column(name="transaction_date")
-	private LocalDateTime transaction_date;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 LocalDateTime transaction_date;
 	
 
 	@CreationTimestamp
 	@Column(name="original_date")
-    private LocalDateTime original_date;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+     LocalDateTime original_date;
 	
 
 	@CreationTimestamp
 	@Column(name="transaction_time")
-	private LocalTime transaction_time;
+	 LocalTime transaction_time;
 	
  
 	@Column(name="customer_no")
